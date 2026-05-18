@@ -132,7 +132,7 @@
           position = 101;
           isEssential = false;
         };
-                "GitHub Study" = {
+        "GitHub Study" = {
           id = "48e8a119-5a14-4826-9545-91c8e8dd3bf6";
           workspace = spaces."Study".id;
           url = "https://github.com";

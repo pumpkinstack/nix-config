@@ -73,13 +73,12 @@
   '';
 
   home.file.".config/gtk-3.0/bookmarks".text = ''
-    file:///home/ashenone/Documents Documents
-    file:///home/ashenone/Downloads Downloads
-    file:///home/ashenone/Pictures Pictures
-    file:///home/ashenone/Videos Videos
-    file:///home/ashenone/Music Music
+    file://${config.home.homeDirectory}/Documents Documents
+    file://${config.home.homeDirectory}/Downloads Downloads
+    file://${config.home.homeDirectory}/Pictures Pictures
+    file://${config.home.homeDirectory}/Videos Videos
+    file://${config.home.homeDirectory}/Music Music
   '';
-
   # qt = {
   #   enable = true;
   #   style.name = "kvantum";
