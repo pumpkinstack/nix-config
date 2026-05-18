@@ -1,0 +1,33 @@
+{
+  pkgs,
+  ...
+}:
+{
+  environment.systemPackages = with pkgs; [
+    wget
+    git
+    curl
+    btop
+    tree
+    man-pages
+    unzip
+    zip
+    p7zip
+    unrar
+    nurl
+    lsd
+    bat
+    gvfs
+    mtpfs
+    libmtp
+    jmtpfs
+    nixfmt
+    nixd
+    brightnessctl
+    asusctl
+    age
+    ssh-to-age
+    sops
+    ripgrep
+  ];
+}

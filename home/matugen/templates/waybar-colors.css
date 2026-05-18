@@ -1,0 +1,13 @@
+/* waybar-colors.css (Matugen Template) */
+@define-color background {{colors.surface.default.hex}};
+@define-color foreground {{colors.on_surface.default.hex}};
+
+/* Mapped terminal colors to Material Design 3 equivalents */
+@define-color color1 {{colors.error.default.hex}};               /* Red / Critical / Power */
+@define-color color2 {{colors.primary.default.hex}};             /* Green / Charging / Playing */
+@define-color color3 {{colors.tertiary.default.hex}};            /* Yellow / Warning / Paused */
+@define-color color4 {{colors.secondary.default.hex}};           /* Blue / Highlight / Focused */
+@define-color color5 {{colors.primary_container.default.hex}};   /* Magenta / Workspaces */
+@define-color color6 {{colors.secondary_container.default.hex}}; /* Cyan / Media */
+@define-color color7 {{colors.on_surface_variant.default.hex}};  /* White / Clock */
+@define-color color8 {{colors.outline.default.hex}};             /* Gray / Muted / Off */

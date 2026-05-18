@@ -1,0 +1,7 @@
+{
+  plugins = {
+    startup = {
+      enable = true;
+    };
+  };
+}
