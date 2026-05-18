@@ -25,30 +25,13 @@
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "nixd";
         "nix.formatterPath" = "nixfmt";
-        "nix.serverSettings" = {
-          "nixd" = {
-            "formatting" = {
-              "command" = [ "nixfmt" ];
-            };
-            "options" = {
-              "nixos" = {
-                "expr" =
-                  "(builtins.getFlake \"/home/tarnished/path-to-your-config\").nixosConfigurations.leyndell.options";
-              };
-              "home-manager" = {
-                "expr" =
-                  "(builtins.getFlake \"/home/tarnished/path-to-your-config\").homeConfigurations.\"tarnished@leyndell\".options";
-              };
-            };
-          };
-        };
 
         # default formatter for everything
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
         "editor.formatOnSave" = true;
 
         # per-language overrides
-        "[nix]"."editor.defaultFormatter" = "brettm12345.nixfmt-vscode";
+        "[nix]"."editor.defaultFormatter" = "jnoortheen.nix-ide";
         "[python]"."editor.defaultFormatter" = "ms-python.python";
         "[rust]"."editor.defaultFormatter" = "rust-lang.rust-analyzer";
         "[lua]"."editor.defaultFormatter" = "JohnnyMorganz.stylua";
@@ -67,7 +50,6 @@
         christian-kohler.path-intellisense
         oderwat.indent-rainbow
         ritwickdey.liveserver
-        brettm12345.nixfmt-vscode
         esbenp.prettier-vscode
         pkief.material-icon-theme
       ];

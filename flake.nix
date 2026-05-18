@@ -1,16 +1,10 @@
 {
-  description = "NixOS configuration";
-
+  description = "NixOS Configuration";
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    quickshell = {
-      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -26,44 +20,36 @@
       url = "github:nix-community/nixvim";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland/v0.55.0";
-
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs =
-    inputs@{
-      nixpkgs,
-      home-manager,
-      hyprland,
-      sops-nix,
-      ...
-    }:
+    { nixpkgs, ... }@inputs:
     let
       system = "x86_64-linux";
-      specialArgs = { inherit inputs system; };
+      pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      nixosConfigurations.leyndell = nixpkgs.lib.nixosSystem {
-        inherit system specialArgs;
+      nixosConfigurations.firelink = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs; };
         modules = [
-          ./hosts/leyndell
+          ./hosts/firelink
           { nixpkgs.config.allowUnfree = true; }
-          sops-nix.nixosModules.sops
-          hyprland.nixosModules.default
-          home-manager.nixosModules.home-manager
+          inputs.hyprland.nixosModules.default
+          inputs.home-manager.nixosModules.default
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = specialArgs;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.users.ashenone = import ./home;
             home-manager.backupFileExtension = "backup";
-            home-manager.users.tarnished = import ./home;
           }
         ];
+      };
+      devShells.${system} = {
+        python = import ./shell/python.nix { inherit pkgs; };
+        js = import ./shell/web.nix { inherit pkgs; };
       };
     };
 }

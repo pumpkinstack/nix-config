@@ -31,7 +31,7 @@
           "Noto Sans Mono"
         ];
         sansSerif = [ "Noto Serif" ];
-        # serif = [ "Cinzel" ];
+        serif = [ "Noto Serif" ];
         emoji = [ "Noto Color Emoji" ];
       };
     };

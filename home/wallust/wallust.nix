@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 {
   xdg.configFile."wallust/templates".source = ./templates;
 

@@ -27,7 +27,6 @@
     asusctl
     age
     ssh-to-age
-    sops
     ripgrep
   ];
 }

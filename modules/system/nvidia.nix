@@ -1,15 +1,15 @@
 {
   config,
-  lib,
   pkgs,
   ...
 }:
+
 {
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     open = false;
     modesetting.enable = true;
-    powerManagement.enable = true;
+    powerManagement.enable = false;
     powerManagement.finegrained = false;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.production;
@@ -49,7 +49,6 @@
     __GL_SYNC_TO_VBLANK = "0";
     __VK_LAYER_NV_optimus = "NVIDIA_only";
     NVD_BACKEND = "direct";
-
   };
   environment.systemPackages = with pkgs; [
     vulkan-loader

@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  lib,
   ...
 }:
 {
@@ -74,11 +73,11 @@
   '';
 
   home.file.".config/gtk-3.0/bookmarks".text = ''
-    file:///home/tarnished/Documents Documents
-    file:///home/tarnished/Downloads Downloads
-    file:///home/tarnished/Pictures Pictures
-    file:///home/tarnished/Videos Videos
-    file:///home/tarnished/Music Music
+    file:///home/ashenone/Documents Documents
+    file:///home/ashenone/Downloads Downloads
+    file:///home/ashenone/Pictures Pictures
+    file:///home/ashenone/Videos Videos
+    file:///home/ashenone/Music Music
   '';
 
   # qt = {

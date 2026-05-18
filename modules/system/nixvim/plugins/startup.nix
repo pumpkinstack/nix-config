@@ -1,7 +1,0 @@
-{
-  plugins = {
-    startup = {
-      enable = true;
-    };
-  };
-}

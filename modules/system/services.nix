@@ -1,7 +1,4 @@
 {
-  config,
-  lib,
-  pkgs,
   ...
 }:
 {
@@ -12,4 +9,9 @@
   programs.appimage.binfmt = true;
   programs.zsh.enable = true;
   services.asusd.enable = true;
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = false;
+  };
 }

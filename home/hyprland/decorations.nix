@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   wayland.windowManager.hyprland.settings = {
 
@@ -10,8 +10,8 @@
         passes = 2;
         new_optimizations = true;
         xray = false;
-        active_opacity = 1.0;
-        inactive_opacity = 0.92;
+        # active_opacity = 1.0;
+        # inactive_opacity = 0.92;
       };
       shadow = {
         enabled = true;

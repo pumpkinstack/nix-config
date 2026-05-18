@@ -43,7 +43,7 @@
       ls = "lsd";
       cat = "bat";
       fzf = "fzf --exact";
-      rebuild = "sudo nixos-rebuild switch --flake ~/nix-config#leyndell";
+      rebuild = "sudo nixos-rebuild switch --flake ~/nix-config#firelink";
       update = "cd ~/nix-config && nix flake update";
     };
 
