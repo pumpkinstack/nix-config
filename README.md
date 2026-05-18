@@ -14,7 +14,6 @@ My personal NixOS configuration using flakes and Home Manager.
 
 ## Stack
 
-- **Shell** — Quickshell (QML-based bar/widgets)
 - **Terminal** — Kitty
 - **Editor** — VSCodium + NixVim
 - **Browser** — Zen
