@@ -18,9 +18,11 @@
 
     nixvim = {
       url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
+    niri.url = "github:sodiboo/niri-flake";
   };
 
   outputs =
@@ -37,6 +39,7 @@
           ./hosts/firelink
           { nixpkgs.config.allowUnfree = true; }
           inputs.hyprland.nixosModules.default
+          inputs.niri.nixosModules.niri 
           inputs.home-manager.nixosModules.default
           {
             home-manager.useGlobalPkgs = true;

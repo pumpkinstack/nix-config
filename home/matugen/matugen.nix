@@ -59,5 +59,10 @@
     [templates.swaync]
     input_path = "${./templates/swaync-colors.css}"
     output_path = "${config.xdg.configHome}/swaync/colors.css"
+
+
+    [templates.zed-editor]
+    input_path = "${./templates/zed.json}"
+    output_path = "${config.xdg.configHome}/zed/themes/matugen.json"
   '';
 }

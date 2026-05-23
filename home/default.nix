@@ -22,6 +22,8 @@
     ./xdg.nix
     ./editors/vscodium.nix
     ./hyprland/hyprland.nix
+    ./editors/zed.nix
+    ./niri/niri.nix
   ];
 
   home.username = "ashenone";

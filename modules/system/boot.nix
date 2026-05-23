@@ -12,7 +12,7 @@ in
 {
   boot = {
     kernelParams = [ "quiet" ];
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_zen;
     blacklistedKernelModules = [ "uvcvideo" ];
     loader = {
       grub = {

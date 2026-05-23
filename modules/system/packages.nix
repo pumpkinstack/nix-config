@@ -24,9 +24,11 @@
     nixfmt
     nixd
     brightnessctl
-    asusctl
-    age
-    ssh-to-age
     ripgrep
+    pyright 
+    ruff
+    vtsls
+    vscode-langservers-extracted 
+    qt6.qtdeclarative 
   ];
 }
