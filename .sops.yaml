@@ -1,6 +1,0 @@
-keys:
-  - &firelink age13jr5yuytvzx0mpuzrshsa84nhdssr6q4npm8lr832gtem8esu58qtdd3x2
-creation_rules:
-  - path_regex: secrets/.*
-    age:
-      - *firelink
