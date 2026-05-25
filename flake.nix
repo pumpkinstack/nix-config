@@ -26,6 +26,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     hyprland.url = "github:hyprwm/Hyprland";
     niri.url = "github:sodiboo/niri-flake";
   };
@@ -43,6 +48,7 @@
         modules = [
           ./hosts/firelink
           { nixpkgs.config.allowUnfree = true; }
+          inputs.sops-nix.nixosModules.sops
           inputs.hyprland.nixosModules.default
           inputs.niri.nixosModules.niri
           inputs.home-manager.nixosModules.default
