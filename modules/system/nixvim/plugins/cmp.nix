@@ -11,6 +11,7 @@
             "snippets"
             "buffer"
           ];
+          keymap.preset = "super-tab";
         };
       };
     };

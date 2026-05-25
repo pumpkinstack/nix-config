@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, pkgs, lib, ... }:
 
 {
   imports = [
@@ -22,13 +22,20 @@
     ./xdg.nix
     ./editors/vscodium.nix
     ./hyprland/hyprland.nix
-    ./editors/zed.nix
     ./niri/niri.nix
+    ./quickshell/quickshell.nix
   ];
 
   home.username = "ashenone";
   home.homeDirectory = "/home/ashenone";
   home.stateVersion = "25.11";
+
+  home.sessionVariables = {
+    QML_IMPORT_PATH = lib.concatStringsSep ":" [
+      "${pkgs.qt6.qtdeclarative}/lib/qml"
+      "${inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default}/lib/qml"
+    ];
+  };
 
   programs.home-manager.enable = true;
 }

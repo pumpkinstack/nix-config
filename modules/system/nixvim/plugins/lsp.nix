@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.nixvim = {
@@ -23,6 +23,21 @@
           };
           jsonls = {
             enable = true;
+          };
+          qmlls = {
+            enable = true;
+            package = pkgs.qt6.qtdeclarative;
+            extraOptions = {
+              cmd = [
+                "qmlls"
+                "-E"
+              ];
+              capabilities = {
+                textDocument = {
+                  semanticTokens = null;
+                };
+              };
+            };
           };
         };
         keymaps = {

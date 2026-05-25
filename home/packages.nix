@@ -35,7 +35,9 @@
     libsForQt5.qt5ct
     qt6Packages.qt6ct
     proton-vpn
-    anydesk
+    loupe
+    gnome-text-editor
+    libreoffice
 
     # System Utilities & CLI Tools
     fzf

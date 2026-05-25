@@ -1,4 +1,5 @@
 {
+  inputs,
   pkgs,
   ...
 }:
@@ -30,5 +31,10 @@
     vtsls
     vscode-langservers-extracted 
     qt6.qtdeclarative 
+    qt6.qtsvg
+    qt6.qtimageformats
+    qt6.qtmultimedia
+    qt6.qt5compat
+    inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }

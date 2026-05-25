@@ -8,6 +8,14 @@
     ./settings.nix
     ./plugins/lsp.nix
     ./plugins/cmp.nix
+    ./plugins/statusline.nix
+    ./plugins/autopairs.nix
+    ./plugins/lazygit.nix
+    ./plugins/harpoon.nix
+    ./plugins/indent.nix
+    ./plugins/key.nix
+    ./plugins/noice.nix
+    ./plugins/misc.nix
   ];
   programs.nixvim = {
     enable = true;

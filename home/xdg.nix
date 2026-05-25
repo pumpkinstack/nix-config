@@ -29,31 +29,27 @@
         nautilus = [ "org.gnome.Nautilus.desktop" ];
         vlc = [ "vlc.desktop" ];
         zathura = [ "org.pwmt.zathura.desktop" ];
-        vscode = [ "code.desktop" ];
-        imv = [ "imv-dir.desktop" ];
+        codium = [ "codium.desktop" ];
+        loupe = [ "org.gnome.Loupe.desktop" ];
+        gnome-editor = [ "org.gnome.TextEditor.desktop" ];
 
         associations = {
           "inode/directory" = nautilus;
-
           "application/pdf" = zathura;
-
           "video/x-matroska" = vlc;
           "video/quicktime" = vlc;
           "video/mp4" = vlc;
-
           "audio/mpeg" = vlc;
-
-          "image/png" = imv;
-          "image/jpeg" = imv;
-          "image/webp" = imv;
-
+          "image/png" = loupe;
+          "image/jpeg" = loupe;
+          "image/webp" = loupe;
           "application/x-tar" = nautilus;
           "application/zip" = nautilus;
-
-          "application/json" = vscode;
-          "text/x-python" = vscode;
-          "text/css" = vscode;
-          "text/plain" = vscode;
+          "application/json" = codium;
+          "text/x-python" = codium;
+          "text/css" = codium;
+          "text/plain" = gnome-editor;
+          "text/x-csrc" =codium;
         };
       in
       {

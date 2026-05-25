@@ -21,6 +21,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     hyprland.url = "github:hyprwm/Hyprland";
     niri.url = "github:sodiboo/niri-flake";
   };
@@ -39,7 +44,7 @@
           ./hosts/firelink
           { nixpkgs.config.allowUnfree = true; }
           inputs.hyprland.nixosModules.default
-          inputs.niri.nixosModules.niri 
+          inputs.niri.nixosModules.niri
           inputs.home-manager.nixosModules.default
           {
             home-manager.useGlobalPkgs = true;
