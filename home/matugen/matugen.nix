@@ -24,6 +24,10 @@
     input_path = "${./templates/hypr.conf}"
     output_path = "${config.xdg.configHome}/hypr/hypr.conf"
 
+    [templates.hyprland]
+    input_path = "${./templates/hyprland-colors.lua}"
+    output_path = "${config.xdg.configHome}/hypr/hyprland-colors.lua"
+
     [templates.waybar]
     input_path = "${./templates/waybar-colors.css}"
     output_path = "${config.xdg.configHome}/waybar/waybar-colors.css"
@@ -60,9 +64,20 @@
     input_path = "${./templates/swaync-colors.css}"
     output_path = "${config.xdg.configHome}/swaync/colors.css"
 
+    [templates.neovim]
+    input_path = "${./templates/neovim-colors.lua}"
+    output_path = "~/.local/share/nvim/site/lua/matugen_colors.lua"
 
     [templates.zed-editor]
     input_path = "${./templates/zed.json}"
     output_path = "${config.xdg.configHome}/zed/themes/matugen.json"
+
+    [templates.heroic]
+    input_path =  "${./templates/heroic.css}"
+    output_path = "${config.xdg.configHome}/heroic/themes/heroic.css"
+
+    [templates.ayugram]
+    input_path = "${./templates/telegram.tdesktop-theme}"
+    output_path = "${config.xdg.configHome}/ayugram/themes/matugen.tdesktop-theme"
   '';
 }

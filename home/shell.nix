@@ -45,8 +45,9 @@
       fzf = "fzf --exact";
       rebuild = "sudo nixos-rebuild switch --flake ~/nix-config#firelink";
       update = "cd ~/nix-config && nix flake update";
-      py="cd ~/nix-config && nix develop .#python --command zsh";
-      js="cd ~/nix-config && nix develop .#js --command zsh";
+      py = "cd ~/nix-config && nix develop .#python --command zsh";
+      js = "cd ~/nix-config && nix develop .#js --command zsh";
+      wallpaper-download = "python ~/Documents/PixelVault/pixelvault.py";
     };
 
     initContent = ''

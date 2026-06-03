@@ -15,12 +15,6 @@
         home-manager.follows = "home-manager";
       };
     };
-
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     quickshell = {
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -28,6 +22,7 @@
 
     hyprland.url = "github:hyprwm/Hyprland";
     niri.url = "github:sodiboo/niri-flake";
+    nixvim.url = "github:nix-community/nixvim";
   };
 
   outputs =
@@ -57,7 +52,7 @@
       };
       devShells.${system} = {
         python = import ./shell/python.nix { inherit pkgs; };
-        js = import ./shell/web.nix { inherit pkgs; };
+        js = import ./shell/js.nix { inherit pkgs; };
       };
     };
 }

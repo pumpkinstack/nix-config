@@ -19,8 +19,10 @@
     enable = true;
     settings.Resolve = {
       DNS = [
-        "1.1.1.1#cloudflare-dns.com"
-        "9.9.9.9#dns.quad9.net"
+        # "1.1.1.1#cloudflare-dns.com"
+        # "9.9.9.9#dns.quad9.net"
+        "45.90.28.0#d4868b.dns.nextdns.io"
+        "2a07:a8c0::#d4868b.dns.nextdns.io"
       ];
       DNSSEC = true;
       DNSOverTLS = true;

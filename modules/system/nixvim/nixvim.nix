@@ -16,6 +16,8 @@
     ./plugins/key.nix
     ./plugins/noice.nix
     ./plugins/misc.nix
+    ./plugins/telescope..nix
+    ./plugins/treesitter.nix
   ];
   programs.nixvim = {
     enable = true;

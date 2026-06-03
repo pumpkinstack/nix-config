@@ -31,5 +31,19 @@
       smartcase = true; # ...unless you type a capital
       hlsearch = false; # don't leave search highlights after moving
     };
+    extraConfigLua = ''
+      local function load_matugen()
+        pcall(dofile, vim.fn.expand("~/.local/share/nvim/site/lua/matugen_colors.lua"))
+      end
+
+      vim.api.nvim_create_autocmd("VimEnter", {
+        callback = load_matugen,
+      })
+
+      vim.api.nvim_create_autocmd("Signal", {
+        pattern = "SIGUSR1",
+        callback = load_matugen,
+      })
+    '';
   };
 }

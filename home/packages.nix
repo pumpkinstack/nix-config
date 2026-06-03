@@ -38,6 +38,7 @@
     loupe
     gnome-text-editor
     libreoffice
+    ayugram-desktop
 
     # System Utilities & CLI Tools
     fzf

@@ -8,6 +8,7 @@ let
     pkill -USR2 waybar
     pkill -USR2 btop
     KITTY_PID=$(pidof kitty) && kill -SIGUSR1 $KITTY_PID
+    pkill -SIGUSR1 nvim
   '';
 in
 {

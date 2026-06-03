@@ -30,7 +30,10 @@
     ruff
     vtsls
     vscode-langservers-extracted 
+    cmake
+    qt6.qtshadertools
     qt6.qtdeclarative 
+    qt6.qtbase
     qt6.qtsvg
     qt6.qtimageformats
     qt6.qtmultimedia

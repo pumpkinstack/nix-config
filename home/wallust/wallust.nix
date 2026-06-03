@@ -16,10 +16,6 @@
     template = "${config.xdg.configHome}/wallust/templates/colors.css"
     target = "${config.xdg.configHome}/waybar/colors.css"
 
-    [templates.hyprland]
-    template = "${config.xdg.configHome}/wallust/templates/hyprland.conf"
-    target = "${config.xdg.configHome}/hypr/colors.conf"
-
     [templates.swaync]
     template = "${config.xdg.configHome}/wallust/templates/swaync.css"
     target = "${config.xdg.configHome}/swaync/colors.css"
@@ -45,3 +41,6 @@
     target = "${config.xdg.configHome}/Kvantum/wallust/wallust.kvconfig"
   '';
 }
+    # [templates.hyprland]
+    # template = "${config.xdg.configHome}/wallust/templates/hyprland.conf"
+    # target = "${config.xdg.configHome}/hypr/colors.conf"

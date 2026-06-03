@@ -6,24 +6,18 @@
       lsp = {
         enable = true;
         servers = {
-          nixd = {
-            enable = true;
-          };
-          lua_ls = {
-            enable = true;
-          };
-          ts_ls = {
-            enable = true;
-          };
-          html = {
-            enable = true;
-          };
-          cssls = {
-            enable = true;
-          };
-          jsonls = {
-            enable = true;
-          };
+          nixd.enable = true;
+          lua_ls.enable = true;
+          ts_ls.enable = true;
+          html.enable = true;
+          cssls.enable = true;
+          jsonls.enable = true;
+          clangd.enable = true;
+          bashls.enable = true;
+          pyright.enable = true;
+          ruff.enable = true;
+          yamlls.enable = true;
+          marksman.enable = true;
           qmlls = {
             enable = true;
             package = pkgs.qt6.qtdeclarative;
