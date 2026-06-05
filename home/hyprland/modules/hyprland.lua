@@ -6,7 +6,7 @@ require("layout")
 require("general")
 require("decorations")
 require("window-rules")
-require("gestures.lua")
+require("gestures")
 
 hl.monitor({
   output = "eDP-1",
@@ -19,5 +19,6 @@ hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("GDK_BACKEND", "wayland,x11,*")
-hl.env("XCURSOR_THEME, Bibata-Modern-Ice")
-hl.env("XCURSOR_SIZE, 24")
+hl.env("QT_QPA_PLATFORM", "wayland;xcb")
+hl.env("XCURSOR_THEME", "Bibata-Modern-Ice")
+hl.env("XCURSOR_SIZE", "24")

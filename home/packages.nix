@@ -15,7 +15,6 @@
     wlogout
     hyprshot
     waypaper
-    wofi
 
     # Multimedia & Graphics
     vlc

@@ -1,8 +1,8 @@
 hl.config({
     decoration = {
         rounding = 10,
-        active_opacity = 1.0,
-        inactive_opacity = 0.9,
+        active_opacity = 0.95,
+        inactive_opacity = 0.85,
         fullscreen_opacity = 1.0,
         rounding_power = 2,
 
@@ -23,5 +23,3 @@ hl.config({
         },
     },
 })
-
-hl.layer_rule({ match = { namespace = "waybar" }, blur = true })

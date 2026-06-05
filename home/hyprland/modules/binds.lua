@@ -21,6 +21,7 @@ hl.bind(mod .. " + H",            hl.dsp.exec_cmd("heroic"))
 hl.bind(mod .. " + U",            hl.dsp.exec_cmd("upscayl"))
 hl.bind(mod .. " + Y",            hl.dsp.exec_cmd("pear-desktop"))
 hl.bind(mod .. " + CTRL + W",     hl.dsp.exec_cmd("waypaper"))
+hl.bind(mod .. " + D",     hl.dsp.exec_cmd("discord"))
 
 -- Focus
 hl.bind(mod .. " + left",  hl.dsp.focus({ direction = "l" }))
@@ -45,8 +46,8 @@ hl.bind(mod .. " + W",            hl.dsp.layout("colresize +conf"))
 hl.bind(mod .. " + ALT + W",      hl.dsp.layout("colresize -conf"))
 
 -- Column resize (repeating)
-hl.bind(mod .. " + ALT + right", hl.dsp.layout("colresize +0.05"), { repeating = true })
-hl.bind(mod .. " + ALT + left",  hl.dsp.layout("colresize -0.05"), { repeating = true })
+hl.bind(mod .. " + CTRL + right", hl.dsp.layout("colresize +0.05"), { repeating = true })
+hl.bind(mod .. " + CTRL + left",  hl.dsp.layout("colresize -0.05"), { repeating = true })
 
 -- Workspaces
 for i = 1, 9 do
@@ -57,18 +58,18 @@ hl.bind(mod .. " + 0",       hl.dsp.focus({ workspace = 10 }))
 hl.bind(mod .. " + SHIFT + 0", hl.dsp.window.move({ workspace = 10 }))
 
 -- Scroll through workspaces
-hl.bind(mod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mod .. " + mouse_down", hl.dsp.focus({ workspace = "m+1" }))
+hl.bind(mod .. " + mouse_up",   hl.dsp.focus({ workspace = "m-1" }))
 
 -- Screenshot
 hl.bind("Print",              hl.dsp.exec_cmd("hyprshot -m output"))
 hl.bind(mod .. " + Print",        hl.dsp.exec_cmd("hyprshot -m window"))
-hl.bind(mod .. " + SHIFT + Print",hl.dsp.exec_cmd("hyprshot -m region"))
+hl.bind(mod .. " + SHIFT + Print",hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
 
 -- Volume
 hl.bind("XF86AudioMute",    hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"))
 hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"))
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 2.0 @DEFAULT_AUDIO_SINK@ 5%+"), { repeating = true })
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"), { repeating = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),        { repeating = true })
 
 -- Brightness
@@ -76,7 +77,7 @@ hl.bind("XF86MonBrightnessUp",   hl.dsp.exec_cmd("brightnessctl set 5%+"), { rep
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"), { repeating = true })
 
 -- Clipboard
-hl.bind(mod .. " + V", hl.dsp.exec_cmd("sh -c 'cliphist list | wofi -dmenu | cliphist decode | wl-copy'"))
+hl.bind(mod .. " + V", hl.dsp.exec_cmd("sh -c 'cliphist list | rofi -dmenu -p \"Clipboard\" | cliphist decode | wl-copy'"))
 
 -- Mouse
 hl.bind(mod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })

@@ -21,10 +21,6 @@
     output_path = "${config.xdg.configHome}/kitty/kitty-colors.conf"
 
     [templates.hyprland]
-    input_path = "${./templates/hypr.conf}"
-    output_path = "${config.xdg.configHome}/hypr/hypr.conf"
-
-    [templates.hyprland]
     input_path = "${./templates/hyprland-colors.lua}"
     output_path = "${config.xdg.configHome}/hypr/hyprland-colors.lua"
 
@@ -68,10 +64,6 @@
     input_path = "${./templates/neovim-colors.lua}"
     output_path = "~/.local/share/nvim/site/lua/matugen_colors.lua"
 
-    [templates.zed-editor]
-    input_path = "${./templates/zed.json}"
-    output_path = "${config.xdg.configHome}/zed/themes/matugen.json"
-
     [templates.heroic]
     input_path =  "${./templates/heroic.css}"
     output_path = "${config.xdg.configHome}/heroic/themes/heroic.css"
@@ -79,5 +71,17 @@
     [templates.ayugram]
     input_path = "${./templates/telegram.tdesktop-theme}"
     output_path = "${config.xdg.configHome}/ayugram/themes/matugen.tdesktop-theme"
+
+    [templates.rofi]
+    input_path = "${./templates/colors.rasi}"
+    output_path = "${config.xdg.configHome}/rofi/colors.rasi"
+
+    [templates.discord-material]
+    input_path = "${./templates/discord-material.css}"
+    output_path = "${config.xdg.configHome}/Equicord/themes/discord-material.css"
+
+    [templates.discord-midnight]
+    input_path = "${./templates/discord-midnight.css}"
+    output_path = "${config.xdg.configHome}/Equicord/themes/discord-midnight.css"
   '';
 }

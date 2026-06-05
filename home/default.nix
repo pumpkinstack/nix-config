@@ -21,9 +21,10 @@
     ./browser/zen.nix
     ./xdg.nix
     ./editors/vscodium.nix
-    ./hyprland/hyprland.nix
+    ./hyprland/default.nix
     ./niri/niri.nix
     ./quickshell/quickshell.nix
+    ./nixcord/nixcord.nix
   ];
 
   home.username = "ashenone";

@@ -24,6 +24,12 @@
         "qt-qml.qmlls.useQmlImportPathEnvVar" = true;
         "qt-qml.qmlls.customExePath" = "/run/current-system/sw/bin/qmlls";
         "qt-qml.doNotAskForQmllsDownload" = true;
+        "qt-core.additionalQtPaths" = [
+          {
+            "name" = "Qt-6.11.0-linux-g++-x86_64_from_PATH";
+            "path" = "/run/current-system/sw/bin/qtpaths";
+          }
+        ];
         "workbench.editorAssociations" = {
           "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.qrc" =
             "default";

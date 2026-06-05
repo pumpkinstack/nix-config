@@ -23,6 +23,7 @@
     hyprland.url = "github:hyprwm/Hyprland";
     niri.url = "github:sodiboo/niri-flake";
     nixvim.url = "github:nix-community/nixvim";
+    nixcord.url = "github:FlameFlag/nixcord";
   };
 
   outputs =
