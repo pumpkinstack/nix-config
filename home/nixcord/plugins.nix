@@ -4,16 +4,15 @@
     # Shared plugins
     alwaysAnimate.enable = true;
     betterSettings.enable = true;
-    ClearURLs.enable = true;
+    clearUrls.enable = true;
     dearrow.enable = true;
     fakeNitro.enable = true;
     fixImagesQuality.enable = true;
     fixSpotifyEmbeds.enable = true;
     fixYoutubeEmbeds.enable = true;
-    friendsSince.enable = true;
     hideMedia.enable = true;
     imageZoom.enable = true;
-    MutualGroupDMs.enable = true;
+    mutualGroupDms.enable = true;
     noMosaic.enable = true;
     petpet.enable = true;
     readAllNotificationsButton.enable = true;
@@ -41,7 +40,7 @@
     gitHubRepos.enable = true;
     themeLibrary.enable = true;
     timezones.enable = true;
-    UserPFP.enable = true;
+    userPfp.enable = true;
     whosWatching.enable = true;
     zipPreview.enable = true;
   };

@@ -83,5 +83,9 @@
     [templates.discord-midnight]
     input_path = "${./templates/discord-midnight.css}"
     output_path = "${config.xdg.configHome}/Equicord/themes/discord-midnight.css"
+
+    [templates.youtube-music]
+    input_path = "${./templates/youtube-music.css}"
+    output_path = "${config.xdg.configHome}/youtube-music/theme.css"
   '';
 }

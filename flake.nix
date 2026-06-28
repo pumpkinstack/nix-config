@@ -20,9 +20,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     hyprland.url = "github:hyprwm/Hyprland";
     niri.url = "github:sodiboo/niri-flake";
-    nixvim.url = "github:nix-community/nixvim";
     nixcord.url = "github:FlameFlag/nixcord";
   };
 
@@ -47,7 +51,7 @@
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.ashenone = import ./home;
-            home-manager.backupFileExtension = "backup";
+            home-manager.backupFileExtension = "bak";
           }
         ];
       };

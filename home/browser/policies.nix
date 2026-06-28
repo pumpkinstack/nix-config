@@ -87,7 +87,6 @@ in
     "privacy.resistFingerprinting.block_mozAddonManager" = true;
     "privacy.spoof_english" = 1;
 
-    "privacy.firstparty.isolate" = true;
     "network.cookie.cookieBehavior" = 5;
     "dom.battery.enabled" = false;
 

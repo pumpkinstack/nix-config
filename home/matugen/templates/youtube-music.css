@@ -1,0 +1,91 @@
+/* youtube-music.css (Matugen Template) - Improved */
+
+:root {
+  /* Core Backgrounds */
+  --yt-spec-base-background:        {{ colors.background.default.hex }};
+  --yt-spec-raised-background:      {{ colors.surface.default.hex }};
+  --yt-spec-menu-background:        {{ colors.surface_container.default.hex }};
+  --yt-spec-inverted-background:    {{ colors.inverse_surface.default.hex }};
+
+  /* Text Colors */
+  --yt-spec-text-primary:           {{ colors.on_background.default.hex }};
+  --yt-spec-text-secondary:         {{ colors.on_surface_variant.default.hex }};
+  --yt-spec-text-disabled:          {{ colors.outline.default.hex }};
+
+  /* Brand/Action Colors */
+  --yt-spec-brand-link-text:        {{ colors.primary.default.hex }};
+  --yt-spec-call-to-action:         {{ colors.primary.default.hex }};
+  --yt-spec-call-to-action-inverse: {{ colors.on_primary.default.hex }};
+  --yt-spec-themed-blue:            {{ colors.tertiary.default.hex }};
+
+  /* Borders & Overlays */
+  --yt-spec-outline:                {{ colors.outline_variant.default.hex }};
+  --yt-spec-10-percent-overlay:     {{ colors.primary.default.hex }}1A;
+  --yt-spec-badge-chip-background:  {{ colors.secondary_container.default.hex }};
+}
+
+/* Layout Elements */
+ytmusic-app-layout,
+ytmusic-header-renderer,
+ytmusic-browse-response {
+  background-color: var(--yt-spec-base-background) !important;
+}
+
+/* Navigation/Sidebar */
+ytmusic-nav-bar {
+  background-color: var(--yt-spec-base-background) !important;
+  border-right: 1px solid var(--yt-spec-outline) !important;
+}
+
+/* Chips/Tags */
+ytmusic-chip-cloud-chip-renderer .chip {
+  background-color: var(--yt-spec-badge-chip-background) !important;
+  color: var(--yt-spec-text-secondary) !important;
+  border-radius: 99px !important;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+ytmusic-chip-cloud-chip-renderer .chip[selected] {
+  background-color: var(--yt-spec-call-to-action) !important;
+  color: var(--yt-spec-call-to-action-inverse) !important;
+}
+
+/* List Items & Hover States */
+ytmusic-two-row-item-renderer,
+ytmusic-responsive-list-item-renderer {
+  background-color: transparent !important;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+ytmusic-two-row-item-renderer:hover,
+ytmusic-responsive-list-item-renderer:hover {
+  background-color: var(--yt-spec-10-percent-overlay) !important;
+}
+
+/* Player Bar */
+ytmusic-player-bar {
+  background-color: var(--yt-spec-base-background) !important;
+  border-top: 1px solid var(--yt-spec-outline) !important;
+}
+
+#progress-bar tp-yt-paper-progress #primaryProgress {
+  background-color: var(--yt-spec-call-to-action) !important;
+}
+
+
+/* Scrollbar */
+::-webkit-scrollbar { 
+  width: 8px; 
+  height: 8px;
+}
+::-webkit-scrollbar-track { 
+  background: transparent; 
+}
+::-webkit-scrollbar-thumb {
+  background: var(--yt-spec-outline);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--yt-spec-call-to-action);
+}

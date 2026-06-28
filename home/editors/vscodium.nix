@@ -11,6 +11,7 @@
         "workbench.colorTheme" = "NoctaliaTheme";
         "workbench.iconTheme" = "material-icon-theme";
         "editor.fontFamily" = "'Noto Serif', 'GoMono Nerd Font'";
+        "terminal.integrated.fontFamily" = "GoMono Nerd Font";
         "editor.fontSize" = 14;
         "editor.fontLigatures" = true;
         "editor.lineHeight" = 1.5;

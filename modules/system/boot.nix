@@ -11,8 +11,8 @@ let
 in
 {
   boot = {
-    kernelParams = [ "quiet" ];
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelParams = [ "quiet" "pcie_aspm=off" ];
+    kernelPackages = pkgs.linuxPackages_latest;
     blacklistedKernelModules = [ "uvcvideo" ];
     loader = {
       grub = {

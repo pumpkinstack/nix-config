@@ -18,7 +18,6 @@
 
     # Multimedia & Graphics
     vlc
-    imv
     imagemagick
     obs-studio
     upscayl
@@ -38,6 +37,8 @@
     gnome-text-editor
     libreoffice
     ayugram-desktop
+    karere
+    obsidian
 
     # System Utilities & CLI Tools
     fzf
