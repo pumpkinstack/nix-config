@@ -130,5 +130,21 @@
           "dckk"
         ];
       };
+
+      "yt" = {
+        urls = [
+          {
+            template = "https://www.youtube.com/results";
+            params = [
+              {
+                name = "search_query";
+                value = "{searchTerms}";
+              }
+            ];
+          }
+        ];
+        icon = "https://www.youtube.com/favicon.ico";
+        definedAliases = [ "yt" ];
+      };
     };
 }

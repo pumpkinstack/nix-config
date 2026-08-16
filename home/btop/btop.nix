@@ -3,7 +3,7 @@
   programs.btop = {
     enable = true;
     settings = {
-      color_theme = "matugen-btop";
+      color_theme = "dynamic-btop";
       theme_background = false;
       truecolor = true;
       force_tty = false;

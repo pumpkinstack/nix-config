@@ -12,31 +12,31 @@
       }
       {
         label = "hibernate";
-        action = "systemctl hibernate";
+        action = "systemctl hibernate || loginctl hibernate";
         text = "Hibernate";
         keybind = "h";
       }
       {
         label = "logout";
-        action = "hyprctl dispatch exit";
+        action = "hyprctl clients -j | jq -r '.[].pid' | xargs kill; pkill Hyprland || pkill niri || loginctl terminate-user $USER";
         text = "Logout";
         keybind = "e";
       }
       {
         label = "shutdown";
-        action = "systemctl poweroff";
+        action = "hyprctl clients -j | jq -r '.[].pid' | xargs kill; systemctl poweroff || loginctl poweroff";
         text = "Shutdown";
         keybind = "s";
       }
       {
         label = "suspend";
-        action = "systemctl suspend";
+        action = "systemctl suspend || loginctl suspend";
         text = "Suspend";
         keybind = "u";
       }
       {
         label = "reboot";
-        action = "systemctl reboot";
+        action = "hyprctl clients -j | jq -r '.[].pid' | xargs kill; systemctl reboot || loginctl reboot";
         text = "Reboot";
         keybind = "r";
       }

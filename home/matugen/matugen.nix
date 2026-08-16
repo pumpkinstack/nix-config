@@ -1,12 +1,13 @@
 { config, ... }:
-{
 
+{
   xdg.configFile."matugen/config.toml".text = ''
     [config]
     mode = "dark"
-    type = "scheme-fidelity"
+    type = "scheme-smart"
     reload_apps = true
     resize_filter = "lanczos3"
+    set_saturation = 60
 
     [templates.gtk3]
     input_path = "${./templates/gtk3-colors.css}"
@@ -30,7 +31,7 @@
 
     [templates.btop]
     input_path = "${./templates/matugen-btop.theme}"
-    output_path = "${config.xdg.configHome}/btop/themes/matugen-btop.theme"
+    output_path = "${config.xdg.configHome}/btop/themes/dynamic-btop.theme"
 
     [templates.zen-chrome]
     input_path  =  "${./templates/zen-userChrome.css}"
@@ -61,16 +62,12 @@
     output_path = "${config.xdg.configHome}/swaync/colors.css"
 
     [templates.neovim]
-    input_path = "${./templates/neovim-colors.lua}"
-    output_path = "~/.local/share/nvim/site/lua/matugen_colors.lua"
+    input_path = "${./templates/neovim-colors.json}"
+    output_path = "${config.xdg.configHome}/matugen/colors.json"
 
     [templates.heroic]
     input_path =  "${./templates/heroic.css}"
     output_path = "${config.xdg.configHome}/heroic/themes/heroic.css"
-
-    [templates.ayugram]
-    input_path = "${./templates/telegram.tdesktop-theme}"
-    output_path = "${config.xdg.configHome}/ayugram/themes/matugen.tdesktop-theme"
 
     [templates.rofi]
     input_path = "${./templates/colors.rasi}"
@@ -83,9 +80,5 @@
     [templates.discord-midnight]
     input_path = "${./templates/discord-midnight.css}"
     output_path = "${config.xdg.configHome}/Equicord/themes/discord-midnight.css"
-
-    [templates.youtube-music]
-    input_path = "${./templates/youtube-music.css}"
-    output_path = "${config.xdg.configHome}/youtube-music/theme.css"
   '';
 }

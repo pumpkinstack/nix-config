@@ -31,7 +31,7 @@ in
   DisableAppUpdate = true;
   DisableFeedbackCommands = true;
   DisableFirefoxStudies = true;
-  DisablePocket = true; # save webs for later reading
+  DisablePocket = true;
   DisableTelemetry = true;
   DontCheckDefaultBrowser = true;
   OfferToSaveLogins = false;
@@ -44,6 +44,10 @@ in
   SanitizeOnShutdown = {
     FormData = true;
     Cache = true;
+  };
+  UserMessaging = {
+    WhatsNew = false;
+    ExtensionRecommendations = false;
   };
   ExtensionSettings = mkExtensionSettings {
     "{446900e4-71c2-419f-a6a7-df9c091e268b}" = mkExtensionEntry {
@@ -72,42 +76,58 @@ in
   };
   Preferences = mkLockedAttrs {
     "browser.aboutConfig.showWarning" = false;
-    "browser.contentblocking.category" = "strict";
+    "browser.contentblocking.category" = "custom";
     "browser.download.start_downloads_in_tmp_dir" = true;
     "browser.tabs.warnOnClose" = false;
-    "media.videocontrols.picture-in-picture.video-toggle.enabled" = true;
     "browser.tabs.hoverPreview.enabled" = true;
     "browser.newtabpage.activity-stream.feeds.topsites" = false;
     "browser.topsites.contile.enabled" = false;
+    "browser.send_pings" = false;
+    "media.videocontrols.picture-in-picture.video-toggle.enabled" = true;
 
-    "privacy.resistFingerprinting" = true;
-    "privacy.resistFingerprinting.randomization.canvas.use_siphash" = true;
-    "privacy.resistFingerprinting.randomization.daily_reset.enabled" = true;
-    "privacy.resistFingerprinting.randomization.daily_reset.private.enabled" = true;
-    "privacy.resistFingerprinting.block_mozAddonManager" = true;
-    "privacy.spoof_english" = 1;
+    # tracking protection (list-based, low overhead, site-compatible)
+    "privacy.trackingprotection.enabled" = true;
+    "privacy.trackingprotection.socialtracking.enabled" = true;
+    "privacy.trackingprotection.cryptomining.enabled" = true;
+    "privacy.trackingprotection.fingerprinting.enabled" = true;
 
+    # cookie isolation
     "network.cookie.cookieBehavior" = 5;
-    "dom.battery.enabled" = false;
 
+    # certificate revocation via local CRLite cache (no latency hit)
+    "security.OCSP.enabled" = 1;
+    "security.remote_settings.crlite_filters.enabled" = true;
+    "security.pki.crlite_mode" = 2;
+
+    # no beacons or prefetch
+    "beacon.enabled" = false;
+    "network.prefetch-next" = false;
+    "network.predictor.enabled" = false;
+    "network.dns.disablePrefetch" = true;
+    "network.dns.disablePrefetchFromHTTPS" = true;
+
+    # misc privacy
+    "dom.battery.enabled" = false;
+    "signon.formlessCapture.enabled" = false;
+    "signon.privateBrowsingCapture.enabled" = false;
+    "permissions.default.desktop-notification" = 2;
+    "permissions.default.geo" = 2;
+    "permissions.manager.defaultsUrl" = "";
+    "network.auth.subresource-http-auth-allow" = 1;
+
+    # performance
     "gfx.webrender.all" = true;
     "gfx.canvas.accelerated.cache-size" = 512;
     "gfx.content.skia-font-cache-size" = 20;
     "network.http.http3.enabled" = true;
+    "network.http.max-connections" = 1800;
+
+    # network hardening
     "network.socket.ip_addr_any.disabled" = true;
-    "network.auth.subresource-http-auth-allow" = 1;
     "network.captive-portal-service.enabled" = false;
     "network.connectivity-service.enabled" = false;
-    "network.dns.disablePrefetch" = true;
-    "network.dns.disablePrefetchFromHTTPS" = true;
-    "network.http.max-connections" = 1800;
-    "permissions.default.desktop-notification" = 2;
-    "permissions.default.geo" = 2;
-    "security.OCSP.enabled" = 0;
-    "signon.formlessCapture.enabled" = false;
-    "signon.privateBrowsingCapture.enabled" = false;
-    "permissions.manager.defaultsUrl" = "";
-    "extensions.autoDisableScopes" = 0;
+
+    # extensions
     "extensions.pocket.enabled" = false;
   };
 }

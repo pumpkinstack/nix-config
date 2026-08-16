@@ -1,0 +1,17 @@
+{
+  "surface_container_lowest": "{{ background | darken(0.15) }}",
+  "surface_dim": "{{ background | darken(0.05) }}",
+  "surface": "{{ background }}",
+  "surface_container_low": "{{ background | darken(0.08) }}",
+  "surface_container": "{{ background | lighten(0.05) }}",
+  "surface_container_high": "{{ background | lighten(0.1) }}",
+  "surface_container_highest": "{{ background | lighten(0.15) }}",
+  "outline": "{{ color8 }}",
+  "outline_variant": "{{ color8 | darken(0.2) }}",
+  "on_surface": "{{ foreground }}",
+  "on_surface_variant": "{{ foreground | darken(0.2) }}",
+  "primary": "{{ color2 }}",
+  "secondary": "{{ color3 }}",
+  "tertiary": "{{ color4 }}",
+  "error": "{{ color1 }}"
+}

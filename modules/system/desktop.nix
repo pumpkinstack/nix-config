@@ -8,8 +8,6 @@
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
 
-  programs.niri.enable = true;
-
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
@@ -20,12 +18,6 @@
       hyprland = {
         default = [
           "hyprland"
-          "gtk"
-        ];
-      };
-      niri = {
-        default = [
-          "gnome"
           "gtk"
         ];
       };

@@ -1,0 +1,85 @@
+/**
+ * @name Noctalia Material
+ * @version 3.0.6
+ * @description A fork of 'Material Discord' for Noctalia Shell
+ * @author CapnKitten
+ *
+ * @website http://github.com/CapnKitten
+ * @source https://github.com/CapnKitten/BetterDiscord/blob/master/Themes/Material-Discord/css/source.css
+ * @donate https://paypal.me/capnkitten
+ * @invite jzJkA6Z
+ */
+
+@import url("https://capnkitten.github.io/BetterDiscord/Themes/Material-Discord/css/source.css");
+
+/* Material You addon */
+@import url("https://capnkitten.github.io/BetterDiscord/Themes/Material-Discord/css/addons/material-you/source.css");
+
+
+
+
+/* MATERIAL YOU DARK THEME SETTINGS */
+.theme-dark {
+    --saturation-modifier: 0.31;
+    --lightness-modifier: 0.225;
+    --text-lightness-modifier: 1.0;
+}
+
+/* MATERIAL YOU LIGHT THEME SETTINGS */
+.theme-light {
+    --saturation-modifier: 0.74;
+    --lightness-modifier: 2.125;
+    --text-lightness-modifier: 1.0;
+}
+
+:root, .theme-dark, .theme-light {
+  /* See options at https://github.com/CapnKitten/Material-Discord */
+  /* Accent
+     NOTE: matugen exposed the accent as separate hue/saturation/lightness
+     components so this theme could recompute custom hover/text shades with
+     CSS hsl()+calc(). wallust has no HSL-decomposition filter, so the two
+     hsl()-based variables below (--message-color-hover, --text-tertiary)
+     are now derived directly with wallust's lighten/darken filters instead
+     of being rebuilt from hue/sat/lightness parts. */
+  --accent-text-color: {{ background }};
+
+  /* App */
+  --app-bg: {{ background }};
+  --main-color: {{ background }};
+  --main-alt: {{ background }};
+  --server-color: {{ background }};
+  --status-picker-color: {{ background | lighten(0.05) }};
+  --sidebar-panel-color: {{ background | lighten(0.05) }};
+  --chat-color: {{ background }};
+  --tooltip-color: {{ background }};
+  --tooltip-text-color: {{ foreground }};
+
+  /* Message */
+  --message-color: {{ background | lighten(0.05) }};
+  --message-color-hover: {{ background | lighten(0.08) }} !important;
+  --message-color-alt: {{ background }};
+  --attachment-color: {{ background }};
+  --main-textarea-color: {{ color2 }};
+  --main-textarea-button-color: {{ background }};
+  --main-textarea-color-alt: {{ color3 }};
+  --main-textarea-border: {{ background | lighten(0.05) }};
+
+  /* Card */
+  --card-color-filled: {{ background | lighten(0.05) }};
+  --card-color-hover: {{ color2 | lighten(0.3) }};
+  --card-color-active: {{ color2 | lighten(0.3) }};
+  --card-color-alt: {{ color3 | lighten(0.2) }};
+  --card-color-alt-hover: {{ color3 }};
+  --card-border-color: {{ background | lighten(0.05) }};
+  --card-header-text-color: {{ foreground }};
+
+  /* Slider & Switch */
+  --switch-knob-color: {{ background | lighten(0.05) }};
+  --switch-slider-color: {{ background }};
+
+  /* Input */
+  --input-text-color: {{ foreground }};
+
+  /* Ensure channels-default is different from the active one - works in dark mode / light mode is another story... */
+  --text-tertiary: {{ color8 | lighten(0.1) }} !important;
+}

@@ -12,8 +12,8 @@
       package = pkgs.adw-gtk3;
     };
     iconTheme = {
-      name = "candy-icons";
-      package = pkgs.candy-icons;
+      name = "BeautySolar";
+      package = pkgs.beauty-line-icon-theme;
     };
     font = {
       name = "Noto Serif";
@@ -31,6 +31,7 @@
   };
 
   home.pointerCursor = {
+    enable = true;
     gtk.enable = true;
     x11.enable = true;
     name = "Bibata-Modern-Ice";
@@ -50,6 +51,7 @@
       font-name = "Noto Serif 12";
       monospace-font-name = "GoMono Nerd Font 12";
       gtk-theme = "adw-gtk3-dark";
+      icon-theme = "BeautySolar";
     };
   };
 
@@ -79,18 +81,4 @@
     file://${config.home.homeDirectory}/Videos Videos
     file://${config.home.homeDirectory}/Music Music
   '';
-  # qt = {
-  #   enable = true;
-  #   style.name = "kvantum";
-  #   platformTheme.name = "kvantum";
-
-  #   kvantum = {
-  #     enable = true;
-  #     settings = {
-  #       General = {
-  #         theme = "wallust";
-  #       };
-  #     };
-  #   };
-  # };
 }

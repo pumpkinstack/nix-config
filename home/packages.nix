@@ -4,9 +4,10 @@
 }:
 {
   home.packages = with pkgs; [
-    # Hyprland/Wayland Desktop Environment
+    # Hyprland / Wayland Desktop Environment
     wallust
     matugen
+    colorice
     awww
     hyprpicker
     wl-clipboard
@@ -21,33 +22,38 @@
     imagemagick
     obs-studio
     upscayl
-    pear-desktop
     playerctl
     pavucontrol
+    pear-desktop
 
     # Gaming
     heroic
 
+    # File Management & Viewers
     nautilus
     zathura
+    loupe
+
+    # Qt/GTK Theming
     libsForQt5.qt5ct
     qt6Packages.qt6ct
-    proton-vpn
-    loupe
-    gnome-text-editor
+    gsettings-desktop-schemas
+    glib
+
+    # Productivity & Communication
     libreoffice
-    ayugram-desktop
-    karere
+    gnome-text-editor
     obsidian
+    signal-desktop
+    karere
+    proton-vpn
+    vivaldi
+    vivaldi-ffmpeg-codecs
 
     # System Utilities & CLI Tools
     fzf
     cabextract
     qbittorrent
-    glib
-    gsettings-desktop-schemas
-
-    # misc2
     instaloader
     ffmpeg
   ];

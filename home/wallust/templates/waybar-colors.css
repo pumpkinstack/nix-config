@@ -1,0 +1,13 @@
+/* waybar-colors.css (Matugen Template) */
+@define-color background {{ background }};
+@define-color foreground {{ foreground }};
+
+/* Mapped terminal colors to Material Design 3 equivalents */
+@define-color color1 {{ color1 }};               /* Red / Critical / Power */
+@define-color color2 {{ color2 }};             /* Green / Charging / Playing */
+@define-color color3 {{ color4 }};            /* Yellow / Warning / Paused */
+@define-color color4 {{ color3 }};           /* Blue / Highlight / Focused */
+@define-color color5 {{ color2 | lighten(0.2) }};   /* Magenta / Workspaces */
+@define-color color6 {{ color3 | lighten(0.2) }}; /* Cyan / Media */
+@define-color color7 {{ foreground | darken(0.2) }};  /* White / Clock */
+@define-color color8 {{ color8 }};             /* Gray / Muted / Off */

@@ -37,8 +37,8 @@
             i = {
               "<esc>" = {
                 __raw = ''
-                  function(...)                                                                                 
-                    return require("telescope.actions").close(...)                                              
+                  function(...)
+                    return require("telescope.actions").close(...)
                   end'';
               };
               "<A-j>" = {
@@ -57,7 +57,7 @@
       };
 
       keymaps = {
-        # Files
+        # Files — <leader>f group
         "<leader><space>" = {
           action = "find_files";
           options.desc = "Find project files";
@@ -66,22 +66,21 @@
           action = "live_grep";
           options.desc = "Grep (root dir)";
         };
-        "<leader>ff" = {
-          action = "find_files";
-          options.desc = "Find project files";
-        };
+        # Removed <leader>ff duplicate of <leader><space>; kept <leader>fg for grep
         "<leader>fg" = {
           action = "live_grep";
           options.desc = "Grep";
         };
+        "<leader>fr" = {
+          action = "oldfiles";
+          options.desc = "Recent files";
+        };
         "<C-p>" = {
           action = "git_files";
-          options = {
-            desc = "Telescope Git Files";
-          };
+          options.desc = "Telescope Git Files";
         };
 
-        # Git
+        # Git — <leader>g group
         "<leader>gc" = {
           action = "git_commits";
           options.desc = "Commits";
@@ -91,7 +90,7 @@
           options.desc = "Git status (view)";
         };
 
-        # Search
+        # Search — <leader>s group
         "<leader>sa" = {
           action = "autocommands";
           options.desc = "Auto Commands";
@@ -108,9 +107,14 @@
           action = "commands";
           options.desc = "Commands";
         };
+        # <leader>sd = document diagnostics, <leader>sD = workspace diagnostics (was duplicated)
+        "<leader>sd" = {
+          action = "diagnostics";
+          options.desc = "Document Diagnostics";
+        };
         "<leader>sD" = {
           action = "diagnostics";
-          options.desc = "Workspace diagnostics";
+          options.desc = "Workspace Diagnostics";
         };
         "<leader>sh" = {
           action = "help_tags";
@@ -139,14 +143,6 @@
         "<leader>sr" = {
           action = "resume";
           options.desc = "Resume";
-        };
-        "<leader>sd" = {
-          action = "diagnostics";
-          options.desc = "Document Diagnostics";
-        };
-        "<leader>st" = {
-          action = "todo-comments";
-          options.desc = "Todo (Telescope)";
         };
         "<leader>su" = {
           action = "undo";

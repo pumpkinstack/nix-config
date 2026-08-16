@@ -88,7 +88,7 @@
           icon = "circle";
           id = 4;
         };
-        Misc = {
+        Sandbox = {
           color = "red";
           icon = "fence";
           id = 5;
@@ -118,8 +118,14 @@
         Misc = {
           id = "c773c7b7-5b4c-4ec0-acd4-99a16197b03a";
           icon = "📦";
-          container = containers."Misc".id;
+          container = containers."Sandbox".id;
           position = 1003;
+        };
+        P2 = {
+          id = "9190249f-ecb3-463e-8662-7fa8bff9e9c9";
+          icon = "⛰️";
+          container = containers."Social".id;
+          position = 1004;
         };
       };
 

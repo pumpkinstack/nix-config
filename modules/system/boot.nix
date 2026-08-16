@@ -12,8 +12,8 @@ in
 {
   boot = {
     kernelParams = [ "quiet" "pcie_aspm=off" ];
-    kernelPackages = pkgs.linuxPackages_latest;
-    blacklistedKernelModules = [ "uvcvideo" ];
+    kernelPackages = pkgs.linuxPackages_zen;
+    blacklistedKernelModules = [ "uvcvideo" "mt7921e" ];
     loader = {
       grub = {
         enable = true;

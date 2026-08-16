@@ -20,6 +20,12 @@
     ./plugins/treesitter.nix
     ./plugins/nvim-tree.nix
     ./plugins/bufferline.nix
+    ./plugins/conform.nix
+    ./plugins/alpha.nix
+    ./plugins/emmet.nix
+    ./plugins/toggleterm.nix
+    ./plugins/matugen.nix
+    ./plugins/comment.nix
   ];
   programs.nixvim = {
     enable = true;

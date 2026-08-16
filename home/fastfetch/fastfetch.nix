@@ -9,7 +9,7 @@
       "logo": {
         "source": "`find $HOME/Pictures/icons -type f | shuf -n 1`",
         "type": "kitty",
-        "width": 40,
+        "width": 32,
         "padding": {
           "top": 1,
           "left": 1,
@@ -17,7 +17,7 @@
         }
       },
       "display": {
-        "separator": "  "
+        "separator": "  "
       },
       "modules": [
         {
@@ -58,7 +58,7 @@
         },
         {
           "type": "Font",
-          "key": "{#separator}│  {#keys} Font"
+          "key": "{#separator}│  {#keys} 󰛖 Font"
         },
         {
           "type": "theme",
@@ -66,7 +66,7 @@
         },
         {
           "type": "Icons",
-          "key": "{#separator}|  {#keys} Icons"
+          "key": "{#separator}│  {#keys} Icons"
         },
         {
           "type": "display",
@@ -82,11 +82,11 @@
         },
         {
           "type": "terminal",
-          "key": "{#separator}|  {#keys} Terminal"
+          "key": "{#separator}│  {#keys} Terminal"
         },
         {
           "type": "packages",
-          "key": "{#separator}|  {#keys}󰏖 Packages"
+          "key": "{#separator}│  {#keys}󰏖 Packages"
         },
         {
           "type": "custom",
@@ -98,11 +98,17 @@
         },
         {
           "type": "cpu",
-          "key": "{#separator}│  {#keys}󰻠 CPU"
+          "key": "{#separator}│  {#keys}󰻠 CPU",
+          "format": "{name}",
+          "name": {
+            "regex": " @$"
+          }
         },
         {
           "type": "gpu",
-          "key": "{#separator}│  {#keys}󰢮 GPU"
+          "key": "{#separator}│  {#keys}󰢮 GPU",
+          "format": "{name}",
+          "hideType": "integrated"
         },
         {
           "type": "memory",
@@ -123,7 +129,7 @@
         },
         {
           "type": "colors",
-          "key": "{#separator}│ {#keys}",
+          "key": "{#separator}│ {#keys}",
           "symbol": "circle"
         },
         {

@@ -36,27 +36,68 @@ vim.api.nvim_set_hl(0, 'Visual', {
 })
 
 -- Make "string" text contrast better
-set_hl_mutliple({ 'String', 'TSString' }, {
-  fg = '{{colors.tertiary.default.hex | lighten: -15.0 }}',
+set_hl_mutliple({ '@string', '@string.special' }, {
+  fg = '{{colors.tertiary.default.hex | lighten: -15.0}}',
 })
 
 -- Grey out comments
-set_hl_mutliple({ 'TSComment', 'Comment' }, {
+set_hl_mutliple({ '@comment' }, {
   fg = '{{colors.outline.default.hex}}',
   italic = true,
 })
 
 -- Color in other highlight groups as you see fit!
 
-set_hl_mutliple({ 'TSMethod', 'Method' }, {
-  fg = '{{colors.tertiary.default.hex}}',
-})
-
-
-set_hl_mutliple({ 'TSFunction', 'Function' }, {
+set_hl_mutliple({ '@function', '@function.method' }, {
   fg = '{{colors.secondary.default.hex}}',
 })
 
 set_hl_mutliple({ 'Keyword', 'TSKeyword', 'TSKeywordFunction', 'TSRepeat' }, {
   fg = '{{colors.inverse_primary.default.hex}}',
+})
+
+-- Cursor line background
+vim.api.nvim_set_hl(0, 'CursorLine', {
+  bg = '{{colors.surface_container.default.hex}}',
+})
+
+-- Line numbers
+vim.api.nvim_set_hl(0, 'LineNr', {
+  fg = '{{colors.outline_variant.default.hex}}',
+})
+vim.api.nvim_set_hl(0, 'CursorLineNr', {
+  fg = '{{colors.primary.default.hex}}',
+  bold = true,
+})
+
+-- Floating windows (LSP hover, cmp, etc.)
+vim.api.nvim_set_hl(0, 'NormalFloat', {
+  bg = '{{colors.surface_container_lowest.default.hex}}',
+})
+vim.api.nvim_set_hl(0, 'FloatBorder', {
+  fg = '{{colors.outline_variant.default.hex}}',
+  bg = '{{colors.surface_container_lowest.default.hex}}',
+})
+
+-- Search highlights
+vim.api.nvim_set_hl(0, 'Search', {
+  bg = '{{colors.secondary_container.default.hex}}',
+  fg = '{{colors.on_secondary_container.default.hex}}',
+})
+
+-- nvim-tree / file explorer sidebar
+vim.api.nvim_set_hl(0, 'NvimTreeNormal', {
+  bg = '{{colors.surface_container_lowest.default.hex}}',
+})
+
+-- Diagnostic underlines (LSP errors/warnings)
+vim.api.nvim_set_hl(0, 'DiagnosticUnderlineError', { sp = '{{colors.error.default.hex}}', undercurl = true })
+vim.api.nvim_set_hl(0, 'DiagnosticUnderlineWarn',  { sp = '{{colors.tertiary.default.hex}}', undercurl = true })
+
+-- Indent guides (you have indent-blankline)
+vim.api.nvim_set_hl(0, 'IblIndent', {
+  fg = '{{colors.surface_container_low.default.hex}}',
+})
+vim.api.nvim_set_hl(0, 'IblScope', {
+  fg = '{{colors.outline_variant.default.hex}}',
 })

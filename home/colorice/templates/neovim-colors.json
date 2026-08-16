@@ -1,0 +1,17 @@
+{
+  "surface_container_lowest": "{background.darken_15}",
+  "surface_dim": "{background.darken_5}",
+  "surface": "{background}",
+  "surface_container_low": "{background.darken_8}",
+  "surface_container": "{background.lighten_5}",
+  "surface_container_high": "{background.lighten_10}",
+  "surface_container_highest": "{background.lighten_15}",
+  "outline": "{color8}",
+  "outline_variant": "{color8.darken_20}",
+  "on_surface": "{foreground}",
+  "on_surface_variant": "{foreground.darken_20}",
+  "primary": "{color2}",
+  "secondary": "{color3}",
+  "tertiary": "{color4}",
+  "error": "{color1}"
+}

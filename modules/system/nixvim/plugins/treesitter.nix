@@ -11,8 +11,10 @@
           indent.enable = true;
         };
       };
+      ts-autotag.enable = true;
       treesitter-context = {
         enable = true;
+        autoLoad = true;
         settings = {
           max_lines = 2;
         };

@@ -1,0 +1,56 @@
+body {
+  --accent: {{ color4 }};
+  --accent-overlay: {{ color2 | lighten(0.3) }};
+  
+  --primary: {{ color2 }};
+  --primary-hover: {{ color2 | lighten(0.2) }};
+  --navbar-accent: var(--primary);
+  
+  --background: {{ background }};
+  --body-background: {{ background }};
+  --navbar-background: {{ background | lighten(0.05) }};
+  
+  --background-darker: var(--background);
+  --current-background: var(--body-background);
+  --navbar-active-background: {{ background | lighten(0.1) }};
+
+  --gradient-body-background: linear-gradient(
+    90deg,
+    var(--background-darker) -32px,
+    var(--body-background) 64px,
+    var(--body-background) 100%
+  );
+  
+  --input-background: var(--navbar-background);
+  --modal-background: var(--body-background);
+  --modal-border: var(--body-background);
+
+  --success: {{ color4 }};
+  --success-hover: {{ color4 | lighten(0.2) }};
+  --danger: {{ color1 }};
+  --danger-hover: {{ color1 | lighten(0.2) }};
+
+  --text-default: {{ foreground }};
+  --text-title: {{ foreground }};
+  --text-secondary: {{ foreground | darken(0.2) }};
+  --text-tertiary: {{ background }};
+  --text-hover: {{ color2 }};
+
+  --text-title: {{ foreground }};
+  --action-icon: {{ foreground }};
+  --action-icon-hover: {{ color2 }};
+  --action-icon-active: {{ color2 | lighten(0.2) }};
+  --icons-background: {{ background | lighten(0.15) }};
+  --icon-disabled: {{ foreground | darken(0.2) }};
+
+  --anticheat-denied: var(--danger);
+  --anticheat-broken: var(--accent);
+  --anticheat-running: var(--primary);
+  --anticheat-supported: var(--success);
+  --anticheat-planned: {{ color3 }};
+
+  --neutral-06: {{ foreground | darken(0.2) }};
+  --gamecard-title-color: {{ background | lighten(0.05) }}cc;
+  --secondary-button: var(--accent);
+  --tertiary-button: var(--primary);
+}

@@ -1,0 +1,101 @@
+# Declarative colorice config — replaces what `colorice --init` would write.
+# Same target paths as the wallust setup, so both stay in sync if you run
+# either tool. Uncomment/remove entries you don't use.
+
+[[templates]]
+name = "kitty"
+input = "kitty-colors.conf"
+output = "~/.config/kitty/colors.conf"
+
+[[templates]]
+name = "rofi"
+input = "colors.rasi"
+output = "~/.config/rofi/colors.rasi"
+
+[[templates]]
+name = "waybar"
+input = "waybar-colors.css"
+output = "~/.config/waybar/colors.css"
+
+[[templates]]
+name = "swaync"
+input = "swaync-colors.css"
+output = "~/.config/swaync/colors.css"
+
+[[templates]]
+name = "gtk3"
+input = "gtk3-colors.css"
+output = "~/.config/gtk-3.0/colors.css"
+
+[[templates]]
+name = "gtk4"
+input = "gtk4-colors.css"
+output = "~/.config/gtk-4.0/colors.css"
+
+[[templates]]
+name = "hyprland"
+input = "hyprland-colors.lua"
+output = "~/.config/hypr/colors.lua"
+
+[[templates]]
+name = "btop"
+input = "matugen-btop.theme"
+output = "~/.config/btop/themes/colorice.theme"
+
+[[templates]]
+name = "nvim-json"
+input = "neovim-colors.json"
+output = "~/.config/nvim/colors.json"
+
+[[templates]]
+name = "nvim-lua"
+input = "neovim-colors.lua"
+output = "~/.config/nvim/lua/colors.lua"
+
+[[templates]]
+name = "qt5ct"
+input = "qtct.conf"
+output = "~/.config/qt5ct/colors/colorice.conf"
+
+[[templates]]
+name = "qt6ct"
+input = "qtct.conf"
+output = "~/.config/qt6ct/colors/colorice.conf"
+
+[[templates]]
+name = "wlogout"
+input = "colors.css"
+output = "~/.config/wlogout/colors.css"
+
+[[templates]]
+name = "heroic"
+input = "heroic.css"
+output = "~/.config/heroic/custom-styles.css"
+
+[[templates]]
+name = "discord-material"
+input = "discord-material.css"
+output = "~/.config/Vencord/themes/material.css"
+
+[[templates]]
+name = "discord-midnight"
+input = "discord-midnight.css"
+output = "~/.config/Vencord/themes/midnight.css"
+
+# Zen: replace <profile> with your actual profile dir (ls ~/.zen)
+[[templates]]
+name = "zen-chrome"
+input = "zen-userChrome.css"
+output = "~/.zen/<profile>/chrome/userChrome.css"
+
+[[templates]]
+name = "zen-content"
+input = "zen-userContent.css"
+output = "~/.zen/<profile>/chrome/userContent.css"
+
+# VS Code: needs a real extension folder to be picked up as a theme,
+# same caveat as the wallust setup — see MAPPING notes.
+[[templates]]
+name = "vscode"
+input = "code.json"
+output = "~/.vscode/extensions/colorice-theme/themes/colorice-color-theme.json"

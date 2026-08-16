@@ -2,12 +2,10 @@
   description = "NixOS Configuration";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
@@ -19,22 +17,33 @@
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     nixvim = {
       url = "github:nix-community/nixvim";
+    };
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixcord = {
+      url = "github:FlameFlag/nixcord";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
-    niri.url = "github:sodiboo/niri-flake";
-    nixcord.url = "github:FlameFlag/nixcord";
   };
-
   outputs =
     { nixpkgs, ... }@inputs:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = [
+          inputs.nix-vscode-extensions.overlays.default
+          (import ./overlays)
+        ];
+        config.allowUnfree = true;
+      };
     in
     {
       nixosConfigurations.firelink = nixpkgs.lib.nixosSystem {
@@ -42,9 +51,14 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/firelink
-          { nixpkgs.config.allowUnfree = true; }
+          {
+            nixpkgs.overlays = [
+              inputs.nix-vscode-extensions.overlays.default
+              (import ./overlays)
+            ];
+            nixpkgs.config.allowUnfree = true;
+          }
           inputs.hyprland.nixosModules.default
-          inputs.niri.nixosModules.niri
           inputs.home-manager.nixosModules.default
           {
             home-manager.useGlobalPkgs = true;

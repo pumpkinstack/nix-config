@@ -1,6 +1,12 @@
-import "./bar"
 import Quickshell
+import QtQuick
 
-ShellRoot {
-    Bar {}
+PanelWindow {
+    anchors {
+        top: true
+        left: true
+        right: true
+    }
+    color: "#7cb9fc"
+    implicitHeight: 20
 }

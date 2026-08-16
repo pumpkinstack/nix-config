@@ -1,12 +1,14 @@
-{ pkgs, ... }:
-
+{ inputs, pkgs, ... }:
+let
+  system = pkgs.system;
+  quickshellPkg = inputs.quickshell.packages.${system}.default;
+in
 {
   programs.nixvim = {
     plugins = {
       lsp = {
         enable = true;
         servers = {
-          nixd.enable = true;
           lua_ls.enable = true;
           ts_ls.enable = true;
           html.enable = true;
@@ -18,6 +20,22 @@
           ruff.enable = true;
           yamlls.enable = true;
           marksman.enable = true;
+          nixd = {
+            enable = true;
+            settings = {
+              nixpkgs = {
+                expr = "import (builtins.getFlake \"${toString ../..}\").inputs.nixpkgs {}";
+              };
+              options = {
+                nixos = {
+                  expr = "(builtins.getFlake \"${toString ../..}\").nixosConfigurations.firelink.options";
+                };
+                home_manager = {
+                  expr = "(builtins.getFlake \"${toString ../..}\").nixosConfigurations.firelink.options.home-manager.users.ashenone";
+                };
+              };
+            };
+          };
           qmlls = {
             enable = true;
             package = pkgs.qt6.qtdeclarative;
@@ -25,11 +43,17 @@
               cmd = [
                 "qmlls"
                 "-E"
+                "-I"
+                "${pkgs.qt6.qtdeclarative}/lib/qt-6/qml"
+                "-I"
+                "${quickshellPkg}/lib/qt-6/qml"
               ];
-              capabilities = {
-                textDocument = {
-                  semanticTokens = null;
-                };
+              on_attach = {
+                __raw = ''
+                  function(client, bufnr)
+                    client.server_capabilities.semanticTokensProvider = nil
+                  end
+                '';
               };
             };
           };
@@ -41,22 +65,29 @@
             "gD" = "declaration";
             "gr" = "references";
             "gi" = "implementation";
-            "gy" = "type_definition";
+            "gy" = "type_definition"; # go to type
             "K" = "hover";
             "<leader>rn" = "rename";
             "<leader>ca" = "code_action";
-            "<leader>f" = "format";
-            "<leader>D" = "type_definition";
+            # <leader>f is reserved for the Files group; format lives at <C-S-i> (conform)
           };
           diagnostic = {
-            "<leader>e" = "open_float";
+            "<leader>de" = "open_float"; # was <leader>e (conflicts with NvimTree) and <leader>d (conflicts with which-key group)
             "[d" = "goto_prev";
             "]d" = "goto_next";
-            "<leader>q" = "setloclist";
-            "<leader>d" = "open_float"; # easier to reach than <leader>e
+            "<leader>dq" = "setloclist"; # was <leader>q (too generic)
           };
         };
       };
+
+      # LSP progress notifications in the bottom-right corner
+      fidget = {
+        enable = true;
+        settings.progress.display.done_icon = "✓";
+      };
+
+      # Highlight other uses of the word under cursor
+      illuminate.enable = true;
     };
   };
 }

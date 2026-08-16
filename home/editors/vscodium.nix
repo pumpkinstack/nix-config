@@ -36,10 +36,20 @@
             "default";
           "*.qrc" = "qt-core.qrcEditor";
         };
+        "nix.serverSettings" = {
+          nixd = {
+            nixpkgs.expr = "import (builtins.getFlake \"${toString ../..}\").inputs.nixpkgs {}";
+            options.nixos.expr = "(builtins.getFlake \"${toString ../..}\").nixosConfigurations.firelink.options";
+          };
+        };
 
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "nixd";
         "nix.formatterPath" = "nixfmt";
+        "nix.diagnostics.excludedExitCode" = 0;
+        "nix.hiddenLanguageServerErrors" = [
+          "textDocument/definition"
+        ];
 
         # default formatter for everything
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
@@ -47,8 +57,6 @@
 
         # per-language overrides
         "[nix]"."editor.defaultFormatter" = "jnoortheen.nix-ide";
-        "[python]"."editor.defaultFormatter" = "ms-python.vscode-pylance";
-        "[rust]"."editor.defaultFormatter" = "rust-lang.rust-analyzer";
         "[lua]"."editor.defaultFormatter" = "JohnnyMorganz.stylua";
         "[css]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
         "[html]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
@@ -56,34 +64,33 @@
         "[typescript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
         "[qml]"."editor.defaultFormatter" = "Delgan.qml-format";
 
-        # New additions for JSON, YAML, and QML
+        # JSON, YAML, QML
         "[json]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
-        "[yaml]"."editor.defaultFormatter" = "redhat.vscode-yaml";
-
-        # Python
-        "python.languageServer" = "Pylance";
-        "python.analysis.typeCheckingMode" = "basic";
+        "qt-qml.qmlls.enabled" = true;
 
         # JavaScript
         "javascript.suggest.autoImports" = true;
         "javascript.updateImportsOnFileMove.enabled" = "always";
         "typescript.suggest.autoImports" = true;
-
-        # QML
-        "qt-qml.qmlls.enabled" = true;
       };
 
-      extensions = with pkgs.vscode-extensions; [
-        jnoortheen.nix-ide
-        christian-kohler.path-intellisense
-        oderwat.indent-rainbow
-        ritwickdey.liveserver
-        esbenp.prettier-vscode
-        pkief.material-icon-theme
-        ms-python.vscode-pylance
-        christian-kohler.npm-intellisense
-        redhat.vscode-yaml
-      ];
+      extensions =
+        with pkgs.vscode-extensions;
+        [
+          jnoortheen.nix-ide
+          christian-kohler.path-intellisense
+          oderwat.indent-rainbow
+          ritwickdey.liveserver
+          esbenp.prettier-vscode
+          pkief.material-icon-theme
+          christian-kohler.npm-intellisense
+        ]
+        ++ (with pkgs.open-vsx; [
+          theqtcompany.qt-qml
+          theqtcompany.qt-core
+          delgan.qml-format
+          johnnymorganz.stylua
+        ]);
     };
   };
 }

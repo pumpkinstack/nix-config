@@ -26,13 +26,17 @@
     keymaps = [
       {
         mode = "n";
-        key = "<leader>e";
+        key = "<C-b>";
         action = "<cmd>NvimTreeToggle<cr>";
         options.desc = "Toggle file explorer";
       }
       {
-        mode = "n";
-        key = "<leader>ef";
+        mode = [
+          "n"
+          "v"
+          "i"
+        ];
+        key = "<leader>e";
         action = "<cmd>NvimTreeFindFile<cr>";
         options.desc = "Find current file in explorer";
       }

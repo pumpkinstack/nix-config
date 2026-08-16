@@ -12,6 +12,7 @@
         "dirhistory"
         "copypath"
         "colored-man-pages"
+        "npm"
       ];
     };
 
@@ -47,7 +48,7 @@
       update = "cd ~/nix-config && nix flake update";
       py = "nix develop ~/nix-config#python --command zsh";
       js = "nix develop ~/nix-config#js --command zsh";
-      wallpaper-download = "python ~/Documents/PixelVault/pixelvault.py";
+      wallpaper-download = "python ~/Documents/pixelVault/pixelvault.py";
     };
 
     initContent = ''

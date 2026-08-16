@@ -19,8 +19,10 @@
     enable = true;
     settings.Resolve = {
       DNS = [
-        "94.140.14.14#dns.adguard-dns.com"
-        "2a10:50c0::ad1:ff#dns.adguard-dns.com"
+        # "94.140.14.14#dns.adguard-dns.com"
+        # "2a10:50c0::ad1:ff#dns.adguard-dns.com"
+        "2a07:a8c0::66:ce99#66ce99.dns.nextdns.io"
+        "45.90.28.0#66ce99.dns.nextdns.io"
       ];
       DNSSEC = true;
       DNSOverTLS = true;

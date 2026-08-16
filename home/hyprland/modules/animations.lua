@@ -1,21 +1,21 @@
 hl.config({
-    animations = {
-        enabled = true,
-    }
+	animations = {
+		enabled = true,
+	},
 })
 
 --------------------------------------------------------------------------------
 -- Animation Curves (Bezier)
 --------------------------------------------------------------------------------
-hl.curve("portal", { type = "bezier", points = { {0.25, 0.73}, {0, 0.31} } })
-hl.curve("graceful", { type = "bezier", points = { {0.25, 1}, {0.5, 1} } })
-hl.curve("strike", { type = "bezier", points = { {0.2, 0.95}, {0.2, 1.05} } })
-hl.curve("ethereal", { type = "bezier", points = { {0.4, 0.0}, {0.2, 1} } })
-hl.curve("drawback", { type = "bezier", points = { {1.00, 1.02}, {0.20, -0.46} } })
-hl.curve("arcane",    { type = "bezier", points = { {0.22, 1.2}, {0.36, 1.0} } })
-hl.curve("vanish",    { type = "bezier", points = { {0.7,  0.0}, {1.0,  0.6} } })
-hl.curve("conjure",   { type = "bezier", points = { {0.34, 1.56}, {0.64, 1.0} } })
-hl.curve("drift",     { type = "bezier", points = { {0.45, 0.0}, {0.55, 1.0} } })
+hl.curve("portal", { type = "bezier", points = { { 0.25, 0.73 }, { 0, 0.31 } } })
+hl.curve("graceful", { type = "bezier", points = { { 0.25, 1 }, { 0.5, 1 } } })
+hl.curve("strike", { type = "bezier", points = { { 0.2, 0.95 }, { 0.2, 1.05 } } })
+hl.curve("ethereal", { type = "bezier", points = { { 0.4, 0.0 }, { 0.2, 1 } } })
+hl.curve("drawback", { type = "bezier", points = { { 1.00, 1.02 }, { 0.20, -0.46 } } })
+hl.curve("arcane", { type = "bezier", points = { { 0.22, 1.2 }, { 0.36, 1.0 } } })
+hl.curve("vanish", { type = "bezier", points = { { 0.7, 0.0 }, { 1.0, 0.6 } } })
+hl.curve("conjure", { type = "bezier", points = { { 0.34, 1.56 }, { 0.64, 1.0 } } })
+hl.curve("drift", { type = "bezier", points = { { 0.45, 0.0 }, { 0.55, 1.0 } } })
 
 --------------------------------------------------------------------------------
 -- Animation Rules

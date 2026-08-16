@@ -22,9 +22,9 @@
     ./xdg.nix
     ./editors/vscodium.nix
     ./hyprland/default.nix
-    ./niri/niri.nix
     ./quickshell/quickshell.nix
     ./nixcord/nixcord.nix
+    ./colorice/colorice.nix
   ];
 
   home.username = "ashenone";

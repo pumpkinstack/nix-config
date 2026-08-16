@@ -1,0 +1,83 @@
+/* Common variables affecting all pages */
+  @-moz-document url-prefix("about:") {
+    :root {
+      --in-content-page-color: {color3} !important;
+      --color-accent-primary: {color2} !important;
+      /* --color-accent-primary-hover: rgb(249, 217, 240) !important;
+      --color-accent-primary-active: rgb(245, 195, 219) !important; */
+      background-color: {background.lighten_5} !important;
+      --in-content-page-background: {background.lighten_5} !important;
+    }
+
+  }
+
+  /* Variables and styles specific to about:newtab and about:home */
+  @-moz-document url("about:newtab"), url("about:home") {
+
+    :root {
+      --newtab-background-color: {background.lighten_5} !important;
+      --newtab-background-color-secondary: {background.lighten_10} !important;
+      --newtab-element-hover-color: {background.lighten_10} !important;
+      --newtab-text-primary-color: {color3} !important;
+      --newtab-wordmark-color: {color3} !important;
+      --newtab-primary-action-background: {color2} !important;
+    }
+
+    .icon {
+      color: {color2} !important;
+    }
+
+    .card-outer:is(:hover, :focus, .active):not(.placeholder) .card-title {
+      color: {color2} !important;
+    }
+  }
+
+  /* Variables and styles specific to about:preferences */
+  @-moz-document url-prefix("about:preferences") {
+    :root {
+      --zen-colors-tertiary: {background.darken_8} !important;
+      --in-content-text-color: {color3} !important;
+      --link-color: {color2} !important;
+      /* --link-color-hover: rgb(249, 217, 240) !important; */
+      --zen-colors-primary: {background.lighten_10} !important;
+      --in-content-box-background: {background.lighten_10} !important;
+      --zen-primary-color: {color2} !important;
+    }
+
+    button,
+    groupbox menulist {
+      background: {background.lighten_10} !important;
+      color: {color3} !important;
+    }
+
+    .main-content {
+      background-color: {background.darken_15} !important;
+    }
+  }
+
+  /* Variables and styles specific to about:addons */
+  @-moz-document url-prefix("about:addons") {
+    :root {
+      --zen-dark-color-mix-base: {background.darken_8} !important;
+      --background-color-box: {background.lighten_5} !important;
+    }
+  }
+
+  /* Variables and styles specific to about:protections */
+  @-moz-document url-prefix("about:protections") {
+    :root {
+      --zen-primary-color: {background.lighten_5} !important;
+      --in-content-primary-button-text-color-hover: {color3} !important;
+      --in-content-primary-button-background: {background.lighten_5} !important;
+      --in-content-primary-button-text-color: {color3} !important;
+    }
+
+    .card {
+      background-color: {background.lighten_10} !important;
+    }
+  }
+    /* Pane UI button visibility issue fix */
+  #PanelUI-menu-button[open] .toolbarbutton-icon {
+    fill: {color2} !important;
+  }
+}
