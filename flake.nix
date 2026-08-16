@@ -72,6 +72,7 @@
       devShells.${system} = {
         python = import ./shell/python.nix { inherit pkgs; };
         js = import ./shell/js.nix { inherit pkgs; };
+        qml = import ./shell/qml.nix { inherit pkgs; };
       };
     };
 }

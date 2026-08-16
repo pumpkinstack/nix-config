@@ -48,6 +48,7 @@
       update = "cd ~/nix-config && nix flake update";
       py = "nix develop ~/nix-config#python --command zsh";
       js = "nix develop ~/nix-config#js --command zsh";
+      q =  "nix develop ~/nix-config#qml --command zsh";
       wallpaper-download = "python ~/Documents/pixelVault/pixelvault.py";
     };
 

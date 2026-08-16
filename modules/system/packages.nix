@@ -49,15 +49,5 @@
 
     # Build tools
     cmake
-
-    # Qt6 / Qt5 libraries
-    qt6.qtshadertools
-    qt6.qtdeclarative
-    qt6.qtbase
-    qt6.qtsvg
-    qt6.qtimageformats
-    qt6.qtmultimedia
-    qt6.qt5compat
-    qt5.qtgraphicaleffects
   ];
 }
