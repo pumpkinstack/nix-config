@@ -51,8 +51,8 @@
             target= "${config.home.homeDirectory}/.vscode-oss/extensions/noctalia.noctaliatheme-0.0.5-universal/themes/NoctaliaTheme-color-theme.json"
 
             [templates.neovim]
-            template = "${./templates/neovim-colors.json}"
-            target = "${config.xdg.configHome}/matugen/colors.json"
+            template = "${./templates/neovim-colors.lua}"
+            target = "${config.xdg.configHome}/nvim/wallust-colors.lua"
 
             [templates.heroic]
             template =  "${./templates/heroic.css}"

@@ -34,7 +34,7 @@
     enable = true;
     gtk.enable = true;
     x11.enable = true;
-    name = "Bibata-Modern-Ice";
+    name = "Bibata-Modern-Classic";
     package = pkgs.bibata-cursors;
     size = 24;
   };
@@ -46,7 +46,7 @@
     };
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
-      cursor-theme = "Bibata-Modern-Ice";
+      cursor-theme = "Bibata-Modern-Classic";
       cursor-size = 24;
       font-name = "Noto Serif 12";
       monospace-font-name = "GoMono Nerd Font 12";

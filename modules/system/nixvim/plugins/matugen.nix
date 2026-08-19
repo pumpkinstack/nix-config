@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 let
   matugen-nvim = pkgs.vimUtils.buildVimPlugin {
     pname = "matugen.nvim";

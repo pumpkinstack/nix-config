@@ -24,7 +24,6 @@
 
     # File / device management
     gvfs
-    mtpfs
     libmtp
 
     # System / hardware

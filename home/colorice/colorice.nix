@@ -11,7 +11,7 @@
     [[templates]]
     name = "hyprland"
     input = "hyprland-colors.lua"
-    output = "${config.xdg.configHome}/hypr/colorice-colors.lua"
+    output = "${config.xdg.configHome}/hypr/hyprland-colors.lua"
 
     [[templates]]
     name = "waybar"
@@ -60,8 +60,8 @@
 
     [[templates]]
     name = "neovim"
-    input = "neovim-colors.json"
-    output = "${config.xdg.configHome}/matugen/colors.json"
+    input = "neovim-colors.lua"
+    output = "${config.xdg.configHome}/nvim/colors.lua"
 
     [[templates]]
     name = "heroic"

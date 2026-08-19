@@ -24,8 +24,9 @@
     ./plugins/alpha.nix
     ./plugins/emmet.nix
     ./plugins/toggleterm.nix
-    ./plugins/matugen.nix
+    # ./plugins/matugen.nix
     ./plugins/comment.nix
+    ./plugins/colorscheme.nix
   ];
   programs.nixvim = {
     enable = true;

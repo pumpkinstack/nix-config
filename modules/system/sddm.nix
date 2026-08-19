@@ -1,30 +1,3 @@
-# { config, lib, pkgs, ... }:
-
-# let
-#   sddm-theme = pkgs.stdenv.mkDerivation {
-#     name = "sddm-bloodstained-theme";
-#     src = pkgs.fetchFromGitHub {
-#       owner = "BloodstainedOath";
-#       repo = "sddm-theme";
-#       rev = "main";
-#       sha256 = "0n81ki7ch8xjab34x50985hdrr6gapl60027y9hxaap4shdv1c7c";
-#     };
-#     installPhase = ''
-#       mkdir -p $out/share/sddm/themes/bloodstained
-#       cp -r . $out/share/sddm/themes/bloodstained
-#     '';
-#   };
-# in
-# {
-#   services.displayManager.sddm = {
-#     enable = true;
-#     wayland.enable = true;
-#     theme = "bloodstained";
-#   };
-
-#   environment.systemPackages = [ sddm-theme ];
-# }
-
 {
   pkgs,
   ...
@@ -58,6 +31,8 @@ in
       kdePackages.qtdeclarative
       kdePackages.qt5compat
       kdePackages.qtmultimedia
+      kdePackages.qtwayland
+      kdePackages.qtsvg
     ];
   };
 

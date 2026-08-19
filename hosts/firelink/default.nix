@@ -41,7 +41,7 @@
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
-    XCURSOR_THEME = "Bibata-Modern-Ice";
+    XCURSOR_THEME = "Bibata-Modern-Classic";
     XCURSOR_SIZE = "24";
     MOZ_ENABLE_WAYLAND = "1";
     GTK_USE_PORTAL = "1";

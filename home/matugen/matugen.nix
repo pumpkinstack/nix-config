@@ -62,8 +62,8 @@
     output_path = "${config.xdg.configHome}/swaync/colors.css"
 
     [templates.neovim]
-    input_path = "${./templates/neovim-colors.json}"
-    output_path = "${config.xdg.configHome}/matugen/colors.json"
+    input_path = "${./templates/neovim-colors.lua}"
+    output_path = "${config.xdg.configHome}/nvim/matugen-colors.lua"
 
     [templates.heroic]
     input_path =  "${./templates/heroic.css}"

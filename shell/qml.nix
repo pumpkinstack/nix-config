@@ -13,5 +13,7 @@ pkgs.mkShell {
   shellHook = ''
     echo "🟦 QML/Qt dev shell ready"
     echo "Qt version: $(qmake6 --version)"
+    export QML2_IMPORT_PATH="${pkgs.qt6.qtdeclarative}/lib/qt-6/qml:$QML2_IMPORT_PATH"
+    export QML_IMPORT_PATH="$QML2_IMPORT_PATH"
   '';
 }

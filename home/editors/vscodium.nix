@@ -22,6 +22,7 @@
         "explorer.confirmDragAndDrop" = false;
         "explorer.confirmDelete" = false;
         "redhat.telemetry.enabled" = false;
+        "window.confirmSaveUntitledWorkspace" = false;
         "qt-qml.qmlls.useQmlImportPathEnvVar" = true;
         "qt-qml.qmlls.customExePath" = "/run/current-system/sw/bin/qmlls";
         "qt-qml.doNotAskForQmllsDownload" = true;

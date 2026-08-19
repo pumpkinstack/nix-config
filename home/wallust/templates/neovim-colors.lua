@@ -1,103 +1,204 @@
-require('base16-colorscheme').setup({
-  base00 = "{{ background }}",
-  base01 = "{{ background | darken(0.15) }}",
-  base02 = "{{ background | darken(0.08) }}",
-  base03 = "{{ color8 | darken(0.2) }}",
-  base04 = "{{ foreground | darken(0.2) }}",
-  base05 = "{{ foreground }}",
-  base06 = "{{ background }}",
-  base07 = "{{ background | lighten(0.2) }}",
+-- colorice theme — generated from {{wallpaper}} via wallust
+-- then run :colorscheme colorice  or add  vim.cmd("colorscheme colorice")  to init.lua
+--
+-- wallust.toml entry:
+--   [templates]
+--   colorice = { src = 'colorice-wallust.lua', dst = '~/.config/nvim/colors/colorice.lua' }
+--
+-- (v3 templating engine — a subset of Jinja2 — is wallust's default,
+--  no extra config needed. If you've switched to the pywal-syntax engine,
+--  swap back with `engine = "default"` in wallust.toml.)
 
-  base08 = "{{ color4 | darken(0.05) }}",
-  base09 = "{{ color4 }}",
-  base0A = "{{ color3 }}",
-  base0B = "{{ color2 }}",
-  base0C = "{{ color4 | lighten(0.2) }}",
-  base0D = "{{ color2 | lighten(0.2) }}",
-  base0E = "{{ color3 | lighten(0.2) }}",
-  base0F = "{{ color3 | darken(0.1) }}",
-})
+vim.cmd("highlight clear")
+if vim.fn.exists("syntax_on") == 1 then vim.cmd("syntax reset") end
+vim.opt.background = "dark"
+vim.opt.termguicolors = true
+vim.g.colors_name = "colorice"
 
+-- 16-color palette — filled in by wallust
+local c = {
+  bg       = "{{background}}",
+  fg       = "{{foreground}}",
+  cursor   = "{{cursor}}",
+  black    = "{{color0}}",
+  red      = "{{color1}}",
+  green    = "{{color2}}",
+  yellow   = "{{color3}}",
+  blue     = "{{color4}}",
+  magenta  = "{{color5}}",
+  cyan     = "{{color6}}",
+  white    = "{{color7}}",
+  br_black = "{{color8}}",
+  br_red   = "{{color9}}",
+  br_green = "{{color10}}",
+  br_yellow= "{{color11}}",
+  br_blue  = "{{color12}}",
+  br_mag   = "{{color13}}",
+  br_cyan  = "{{color14}}",
+  br_white = "{{color15}}",
+}
 
--- We first theme base16, but we also need to fix some other colors that don't
--- contrast well by default
+-- UI accent tones — derived with wallust's built-in filters
+-- (lighten/darken take a float 0.1–1.0; chain filters with more pipes if needed)
+local bg_dim   = "{{background | lighten(0.04)}}"
+local bg_light = "{{background | lighten(0.08)}}"
+local sel      = "{{background | lighten(0.15)}}"
+local comment  = "{{color8 | darken(0.15)}}"
+local delim    = "{{color8 | darken(0.08)}}"
+local linenr   = "{{color8 | darken(0.25)}}"
+local tab_bg   = "{{background | darken(0.05)}}"
+local br_mag2  = "{{color5 | lighten(0.15)}}"
 
--- Helper function to set multiple highlight groups at once
-local function set_hl_mutliple(groups, value)
-  for _, v in pairs(groups) do
-    vim.api.nvim_set_hl(0, v, value)
-  end
+local function hi(group, opts)
+  vim.api.nvim_set_hl(0, group, opts)
 end
 
--- Make selected text stand out more
-vim.api.nvim_set_hl(0, 'Visual', {
-  bg = '{{ color2 | lighten(0.2) }}',
-  fg = '{{ background }}', -- normal text contrast
+-- ── Background & foreground ───────────────────────────────────────────────────
+
+hi("Normal",        { fg = c.fg,    bg = c.bg })
+hi("NormalFloat",   { fg = c.fg,    bg = bg_light })
+hi("NonText",       { fg = bg_dim })
+hi("EndOfBuffer",   { fg = bg_dim })
+
+-- ── Core syntax ───────────────────────────────────────────────────────────────
+
+hi("Comment",       { fg = comment,    italic = true })
+hi("Constant",      { fg = c.magenta })
+hi("String",        { fg = c.green })
+hi("Character",     { fg = c.green })
+hi("Number",        { fg = c.magenta })
+hi("Float",         { fg = c.magenta })
+hi("Boolean",       { fg = c.magenta,  italic = true })
+
+hi("Identifier",    { fg = c.fg })
+hi("Function",      { fg = c.cyan,     bold = true })
+
+hi("Statement",     { fg = c.blue,     bold = true })
+hi("Keyword",       { fg = c.blue,     bold = true })
+hi("Conditional",   { fg = c.blue })
+hi("Repeat",        { fg = c.blue })
+hi("Label",         { fg = c.blue })
+hi("Exception",     { fg = c.red,      bold = true })
+hi("Operator",      { fg = c.white })
+
+hi("PreProc",       { fg = c.red })
+hi("Include",       { fg = c.red,      italic = true })
+hi("Define",        { fg = c.red })
+hi("Macro",         { fg = c.red })
+
+hi("Type",          { fg = c.yellow })
+hi("StorageClass",  { fg = c.yellow,   italic = true })
+hi("Structure",     { fg = c.yellow,   bold = true })
+hi("Typedef",       { fg = c.yellow })
+
+hi("Special",       { fg = c.white })
+hi("SpecialChar",   { fg = c.magenta,  bold = true })
+hi("Delimiter",     { fg = delim })
+hi("SpecialComment",{ fg = c.blue,     italic = true })
+hi("Tag",           { fg = c.cyan })
+
+hi("Underlined",    { fg = c.blue,     underline = true })
+hi("Error",         { fg = c.red,      undercurl = true })
+hi("Todo",          { fg = c.bg,       bg = c.yellow, bold = true })
+
+hi("Title",         { fg = c.cyan,     bold = true })
+hi("Bold",          { bold = true })
+hi("Italic",        { italic = true })
+
+-- ── Python-specific ───────────────────────────────────────────────────────────
+
+hi("pythonBuiltin",       { fg = br_mag2 })
+hi("pythonBuiltinFunc",   { fg = br_mag2 })
+hi("pythonBuiltinObj",    { fg = br_mag2,   italic = true })
+hi("pythonDecorator",     { fg = c.magenta, bold = true })
+hi("pythonDecoratorName", { fg = c.magenta })
+hi("pythonFunction",      { fg = c.cyan,    bold = true })
+hi("pythonClass",         { fg = c.yellow,  bold = true })
+hi("pythonException",     { fg = c.red,     bold = true })
+hi("pythonExceptions",    { fg = c.red })
+hi("pythonRawString",     { fg = c.green,   italic = true })
+hi("pythonFString",       { fg = c.green })
+hi("pythonStrFormat",     { fg = c.magenta })
+hi("pythonSelf",          { fg = c.br_black, italic = true })
+hi("pythonDottedName",    { fg = c.fg })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "python",
+  group = vim.api.nvim_create_augroup("ColoriceThemePython", { clear = true }),
+  callback = function()
+    vim.cmd("syntax keyword pythonSelf self cls containedin=ALL")
+    hi("pythonSelf", { fg = c.br_black, italic = true })
+  end,
 })
 
--- Make "string" text contrast better
-set_hl_mutliple({ '@string', '@string.special' }, {
-  fg = '{{ color4 | darken(0.15) }}',
-})
+-- ── Editor UI ─────────────────────────────────────────────────────────────────
 
--- Grey out comments
-set_hl_mutliple({ '@comment' }, {
-  fg = '{{ color8 }}',
-  italic = true,
-})
+hi("LineNr",        { fg = linenr })
+hi("CursorLineNr",  { fg = c.white,  bg = bg_light, bold = true })
+hi("CursorLine",    { bg = bg_light })
+hi("CursorColumn",  { bg = bg_light })
+hi("ColorColumn",   { bg = bg_light })
+hi("SignColumn",    {})
+hi("VertSplit",     { fg = bg_dim })
+hi("Folded",        { fg = c.br_black, bg = bg_light, italic = true })
+hi("FoldColumn",    { fg = linenr })
 
--- Color in other highlight groups as you see fit!
+-- ── Selection & search ────────────────────────────────────────────────────────
 
-set_hl_mutliple({ '@function', '@function.method' }, {
-  fg = '{{ color3 }}',
-})
+hi("Visual",        { bg = sel })
+hi("VisualNOS",     { bg = sel })
+hi("Search",        { fg = c.bg,    bg = c.yellow, bold = true })
+hi("IncSearch",     { fg = c.bg,    bg = c.blue,   bold = true })
+hi("CurSearch",     { fg = c.bg,    bg = c.cyan,   bold = true })
+hi("MatchParen",    { fg = c.white, bg = sel,      bold = true })
 
-set_hl_mutliple({ 'Keyword', 'TSKeyword', 'TSKeywordFunction', 'TSRepeat' }, {
-  fg = '{{ color2 | lighten(0.3) }}',
-})
+-- ── Status line ───────────────────────────────────────────────────────────────
 
--- Cursor line background
-vim.api.nvim_set_hl(0, 'CursorLine', {
-  bg = '{{ background | lighten(0.05) }}',
-})
+hi("StatusLine",    { fg = c.fg,    bg = bg_light, bold = true })
+hi("StatusLineNC",  { fg = comment, bg = tab_bg })
 
--- Line numbers
-vim.api.nvim_set_hl(0, 'LineNr', {
-  fg = '{{ color8 | darken(0.2) }}',
-})
-vim.api.nvim_set_hl(0, 'CursorLineNr', {
-  fg = '{{ color2 }}',
-  bold = true,
-})
+-- ── Tabs ──────────────────────────────────────────────────────────────────────
 
--- Floating windows (LSP hover, cmp, etc.)
-vim.api.nvim_set_hl(0, 'NormalFloat', {
-  bg = '{{ background | darken(0.15) }}',
-})
-vim.api.nvim_set_hl(0, 'FloatBorder', {
-  fg = '{{ color8 | darken(0.2) }}',
-  bg = '{{ background | darken(0.15) }}',
-})
+hi("TabLine",       { fg = comment, bg = tab_bg })
+hi("TabLineSel",    { fg = c.fg,    bg = bg_light, bold = true })
+hi("TabLineFill",   { bg = tab_bg })
 
--- Search highlights
-vim.api.nvim_set_hl(0, 'Search', {
-  bg = '{{ color3 | lighten(0.2) }}',
-  fg = '{{ background }}',
-})
+-- ── Popup menu ────────────────────────────────────────────────────────────────
 
--- nvim-tree / file explorer sidebar
-vim.api.nvim_set_hl(0, 'NvimTreeNormal', {
-  bg = '{{ background | darken(0.15) }}',
-})
+hi("Pmenu",         { fg = c.fg,    bg = bg_light })
+hi("PmenuSel",      { fg = c.bg,    bg = c.blue,   bold = true })
+hi("PmenuSbar",     { bg = bg_light })
+hi("PmenuThumb",    { bg = comment })
 
--- Diagnostic underlines (LSP errors/warnings)
-vim.api.nvim_set_hl(0, 'DiagnosticUnderlineError', { sp = '{{ color1 }}', undercurl = true })
-vim.api.nvim_set_hl(0, 'DiagnosticUnderlineWarn',  { sp = '{{ color4 }}', undercurl = true })
+-- ── Diff ──────────────────────────────────────────────────────────────────────
 
--- Indent guides (you have indent-blankline)
-vim.api.nvim_set_hl(0, 'IblIndent', {
-  fg = '{{ background | darken(0.08) }}',
-})
-vim.api.nvim_set_hl(0, 'IblScope', {
-  fg = '{{ color8 | darken(0.2) }}',
-})
+hi("DiffAdd",       { fg = c.green,  bg = bg_light })
+hi("DiffDelete",    { fg = c.red,    bg = bg_light })
+hi("DiffChange",    { fg = c.yellow, bg = bg_light })
+hi("DiffText",      { fg = c.fg,     bg = sel,     bold = true })
+
+-- ── Diagnostics / Spell ───────────────────────────────────────────────────────
+
+hi("DiagnosticError",          { fg = c.red })
+hi("DiagnosticWarn",           { fg = c.magenta })
+hi("DiagnosticInfo",           { fg = c.blue })
+hi("DiagnosticHint",           { fg = c.cyan })
+hi("DiagnosticUnderlineError", { undercurl = true, sp = c.red })
+hi("DiagnosticUnderlineWarn",  { undercurl = true, sp = c.magenta })
+
+hi("SpellBad",      { undercurl = true, sp = c.red })
+hi("SpellCap",      { undercurl = true, sp = c.yellow })
+hi("SpellRare",     { undercurl = true, sp = c.magenta })
+hi("SpellLocal",    { undercurl = true, sp = br_mag2 })
+
+hi("WarningMsg",    { fg = c.magenta })
+hi("ErrorMsg",       { fg = c.red,    bold = true })
+hi("MoreMsg",       { fg = c.blue })
+hi("Question",      { fg = c.blue })
+hi("Directory",     { fg = c.yellow })
+
+-- ── Misc ──────────────────────────────────────────────────────────────────────
+
+hi("WildMenu",      { fg = c.bg,    bg = c.blue,  bold = true })
+hi("Conceal",       { fg = comment })
+hi("SpecialKey",    { fg = bg_dim })

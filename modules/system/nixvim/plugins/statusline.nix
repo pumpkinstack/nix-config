@@ -4,7 +4,7 @@
     enable = true;
     settings = {
       options = {
-        theme.__raw = "require('matugen').lualine()";
+        theme = "auto";
         globalstatus = true;
       };
       sections = {
