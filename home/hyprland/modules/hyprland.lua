@@ -7,6 +7,7 @@ require("general")
 require("decorations")
 require("window-rules")
 require("gestures")
+require("misc")
 
 hl.monitor({
 	output = "eDP-1",

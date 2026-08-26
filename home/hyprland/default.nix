@@ -11,5 +11,6 @@
     "hypr/decorations.lua".source = ./modules/decorations.lua;
     "hypr/gestures.lua".source = ./modules/gestures.lua;
     "hypr/window-rules.lua".source = ./modules/window-rules.lua;
+    "hypr/misc.lua".source = ./modules/misc.lua;
   };
 }
