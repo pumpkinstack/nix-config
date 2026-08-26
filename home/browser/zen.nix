@@ -50,7 +50,6 @@
         "zen.theme.dark-mode-bias" = 0.5;
         "browser.startup.page" = 3;
         "browser.sessionstore.resume_from_crash" = true;
-        "dom.security.https_only_mode" = true;
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         "zen.view.use-single-toolbar" = false;
         "zen.view.sidebar-expanded" = false;
@@ -60,8 +59,64 @@
         force = true;
         settings = [
           {
-            name = "NixOS";
-            url = "https://nixos.org";
+            name = "toolbar";
+            toolbar = true;
+            bookmarks = [
+              {
+                name = "Nix";
+                bookmarks = [
+                  {
+                    name = "NixOS";
+                    url = "https://nixos.org";
+                  }
+                  {
+                    name = "Nixpkgs";
+                    url = "https://github.com/NixOS/nixpkgs";
+                  }
+                  {
+                    name = "Home Manager";
+                    url = "https://github.com/nix-community/home-manager";
+                  }
+                  {
+                    name = "NixOS Wiki";
+                    url = "https://wiki.nixos.org";
+                  }
+                ];
+              }
+              {
+                name = "Dev Tools";
+                bookmarks = [
+                  {
+                    name = "DevDocs";
+                    url = "https://devdocs.io/";
+                  }
+                  {
+                    name = "explainshell";
+                    url = "https://explainshell.com/";
+                  }
+                  {
+                    name = "RegExr";
+                    url = "https://regexr.com/";
+                  }
+                  {
+                    name = "VisuAlgo";
+                    url = "https://visualgo.net/en";
+                  }
+                  {
+                    name = "Transform";
+                    url = "https://transform.tools/";
+                  }
+                  {
+                    name = "Excalidraw";
+                    url = "https://excalidraw.com/";
+                  }
+                  {
+                    name = "Hoppscotch";
+                    url = "https://hoppscotch.io/";
+                  }
+                ];
+              }
+            ];
           }
         ];
       };

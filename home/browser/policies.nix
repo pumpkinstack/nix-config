@@ -35,6 +35,7 @@ in
   DisableTelemetry = true;
   DontCheckDefaultBrowser = true;
   OfferToSaveLogins = false;
+  HttpsOnlyMode = "force_enabled";
   EnableTrackingProtection = {
     Value = true;
     Locked = true;
@@ -77,7 +78,6 @@ in
   Preferences = mkLockedAttrs {
     "browser.aboutConfig.showWarning" = false;
     "browser.contentblocking.category" = "custom";
-    "browser.download.start_downloads_in_tmp_dir" = true;
     "browser.tabs.warnOnClose" = false;
     "browser.tabs.hoverPreview.enabled" = true;
     "browser.newtabpage.activity-stream.feeds.topsites" = false;
