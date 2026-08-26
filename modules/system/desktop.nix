@@ -1,12 +1,19 @@
 { pkgs, inputs, ... }:
+
 {
   programs.hyprland = {
     enable = true;
     withUWSM = true;
     xwayland.enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    portalPackage =
+      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
+
+  # programs.niri = {
+  #   enable = true;
+  #   package = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri-unstable;
+  # };
 
   xdg.portal = {
     enable = true;
@@ -21,6 +28,12 @@
           "gtk"
         ];
       };
+      # niri = {
+      #   default = [
+      #     "gnome"
+      #     "gtk"
+      #   ];
+      # };
       common = {
         default = [ "gtk" ];
       };

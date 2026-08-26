@@ -34,7 +34,6 @@
     enable = true;
     enable32Bit = true;
     extraPackages = with pkgs; [
-      intel-media-driver
       libva-vdpau-driver
       libvdpau-va-gl
       nvidia-vaapi-driver
@@ -47,8 +46,8 @@
     __GL_VRR_ALLOWED = "1";
     __GL_GSYNC_ALLOWED = "1";
     __GL_SYNC_TO_VBLANK = "0";
-    __VK_LAYER_NV_optimus = "NVIDIA_only";
     NVD_BACKEND = "direct";
+    WLR_NO_HARDWARE_CURSORS = "1";
   };
   environment.systemPackages = with pkgs; [
     vulkan-loader

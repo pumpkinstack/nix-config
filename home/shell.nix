@@ -44,7 +44,7 @@
       ls = "lsd";
       cat = "bat";
       fzf = "fzf --exact";
-      rebuild = "sudo nixos-rebuild switch --flake ~/nix-config#firelink";
+      rebuild = "sudo nixos-rebuild switch --flake ~/nix-config#firelink --impure";
       update = "cd ~/nix-config && nix flake update";
       py = "nix develop ~/nix-config#python --command zsh";
       js = "nix develop ~/nix-config#js --command zsh";
