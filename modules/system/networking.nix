@@ -1,5 +1,8 @@
-{ ... }:
+{ lib, ... }:
 
+let
+  nextdnsId = lib.strings.trim (builtins.readFile /home/ashenone/nix-config/.secrets/nextdns-id);
+in
 {
   networking = {
     hostName = "firelink";
@@ -19,8 +22,8 @@
     enable = true;
     settings.Resolve = {
       DNS = [
-        "2a07:a8c0::66:ce99#66ce99.dns.nextdns.io"
-        "45.90.28.0#66ce99.dns.nextdns.io"
+        "2a07:a8c0::66:ce99#${nextdnsId}.dns.nextdns.io"
+        "45.90.28.0#${nextdnsId}.dns.nextdns.io"
       ];
       DNSSEC = true;
       DNSOverTLS = true;
