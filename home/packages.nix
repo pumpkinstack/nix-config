@@ -1,7 +1,9 @@
 {
   pkgs,
+  inputs,
   ...
 }:
+
 {
   home.packages = with pkgs; [
     # Hyprland / Wayland Desktop Environment
@@ -19,15 +21,14 @@
 
     # Multimedia & Graphics
     vlc
-    imagemagick
     obs-studio
     upscayl
-    playerctl
     pavucontrol
     pear-desktop
 
     # Gaming
     heroic
+    inputs.freesmlauncher.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     # File Management & Viewers
     nautilus
@@ -54,6 +55,9 @@
     fzf
     cabextract
     qbittorrent
+    yt-dlp
+    imagemagick
+    playerctl
     instaloader
     ffmpeg
   ];

@@ -6,10 +6,10 @@
   programs.rofi = {
     enable = true;
     package = pkgs.rofi;
-    terminal = "${pkgs.kitty}/bin/kitty";
 
-    extraConfig = {
+    settings = {
       modi = "drun,run,window,emoji:rofimoji";
+      settings.terminal = "${pkgs.kitty}/bin/kitty";
       icon-theme = "candy-icons";
       show-icons = true;
       drun-display-format = "{name}";

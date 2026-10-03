@@ -31,7 +31,8 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
-    # niri.url = "github:sodiboo/niri-flake";
+
+    freesmlauncher.url = "github:FreesmTeam/FreesmLauncher";
   };
   outputs =
     { nixpkgs, ... }@inputs:
@@ -41,7 +42,6 @@
         inherit system;
         overlays = [
           inputs.nix-vscode-extensions.overlays.default
-          # inputs.niri.overlays.niri
           (import ./overlays)
         ];
         config.allowUnfree = true;
@@ -56,14 +56,12 @@
           {
             nixpkgs.overlays = [
               inputs.nix-vscode-extensions.overlays.default
-              # inputs.niri.overlays.niri
               (import ./overlays)
             ];
             nixpkgs.config.allowUnfree = true;
           }
           inputs.hyprland.nixosModules.default
           inputs.home-manager.nixosModules.default
-          # inputs.niri.nixosModules.niri 
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;

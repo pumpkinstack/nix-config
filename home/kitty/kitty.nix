@@ -21,23 +21,25 @@
       enabled_layouts = "tall, stack";
       # Audio
       enable_audio_bell = false;
+      # Shaders
+      custom_shaders = "cursor-trail-blaze";
     };
     keybindings = {
       # Tabs
-      "ctrl+shift+t"       = "new_tab_with_cwd";
-      "ctrl+shift+w"       = "close_tab";
-      "ctrl+shift+right"   = "next_tab";
-      "ctrl+shift+left"    = "previous_tab";
-      "ctrl+shift+,"       = "move_tab_backward";
-      "ctrl+shift+."       = "move_tab_forward";
+      "ctrl+shift+t" = "new_tab_with_cwd";
+      "ctrl+shift+w" = "close_tab";
+      "ctrl+shift+right" = "next_tab";
+      "ctrl+shift+left" = "previous_tab";
+      "ctrl+shift+," = "move_tab_backward";
+      "ctrl+shift+." = "move_tab_forward";
 
       # Windows (tall layout — side by side)
-      "ctrl+shift+enter"   = "new_window_with_cwd";
-      "ctrl+shift+q"       = "close_window";
-      "ctrl+shift+l"       = "next_window";
-      "ctrl+shift+h"       = "previous_window";
-      "ctrl+shift+r"       = "start_resizing_window";
-      "ctrl+shift+f"       = "toggle_layout stack";
+      "ctrl+shift+enter" = "new_window_with_cwd";
+      "ctrl+shift+q" = "close_window";
+      "ctrl+shift+l" = "next_window";
+      "ctrl+shift+h" = "previous_window";
+      "ctrl+shift+r" = "start_resizing_window";
+      "ctrl+shift+f" = "toggle_layout stack";
     };
     extraConfig = ''
       include ${config.xdg.configHome}/kitty/kitty-colors.conf

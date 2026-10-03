@@ -21,15 +21,12 @@
         "906c6915-5677-48ff-9bfc-096a02a72379" # Floating Status Bar
         "cb15abdb-0514-4e09-8ce5-722cf1f4a20f" # Hide Extension Name
         "72f8f48d-86b9-4487-acea-eb4977b18f21" # Better CtrlTab Panel
-        "664c54f9-d97d-410b-a479-23dd8a08a628" # Better Tab Indicators
-        "d8b79d4a-6cba-4495-9ff6-d6d30b0e94fe" # Better Active Tab
         "5941aefd-67b0-453d-9b62-9071a31cbb0d" # Smaller Compact Mode
         "58649066-2b6f-4a5b-af6d-c3d21d16fc00" # Private Mode Highlighting
         "1b88a6d1-d931-45e8-b6c3-bfdca2c7e9d6" # Remove Tab X
         "f4866f39-cfd6-4498-ab92-54213b8279dc" # Animations Plus
         "a5f6a231-e3c8-4ce8-8a8e-3e93efd6adec" # Cleaned URL bar
         "ea1a5ace-f698-4b45-ab88-6e8bd3a563f0" # Bookmark Toolbar Tweaks
-        "642854b5-88b4-4c40-b256-e035532109df" # Transparent Zen
         "fd24f832-a2e6-4ce9-8b19-7aa888eb7f8e" # Quietify
         "b0f635d7-c3bf-4709-af68-4712f0e5b2e5" # Cleaner Bookmark Menu
         "4596d8f9-f0b7-4aeb-aa92-851222dc1888" # Only Close On Hover
@@ -81,6 +78,10 @@
                     name = "NixOS Wiki";
                     url = "https://wiki.nixos.org";
                   }
+                  {
+                    name = "Nix Dev";
+                    url = "https://nix.dev";
+                  }
                 ];
               }
               {
@@ -113,6 +114,23 @@
                   {
                     name = "Hoppscotch";
                     url = "https://hoppscotch.io/";
+                  }
+                ];
+              }
+              {
+                name = "Resources";
+                bookmarks = [
+                  {
+                    name = "MDNdocs";
+                    url = "https://developer.mozilla.org/en-US/";
+                  }
+                  {
+                    name = "JavaScriptInfo";
+                    url = "https://javascript.info/";
+                  }
+                  {
+                    name = "ReactDocs";
+                    url = "https://react.dev/learn";
                   }
                 ];
               }
