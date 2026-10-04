@@ -16,6 +16,7 @@
     ../../modules/system/audio.nix
     ../../modules/system/fonts.nix
     ../../modules/system/nixvim/nixvim.nix
+    ../../modules/system/multimedia.nix
   ];
 
   nix.settings = {

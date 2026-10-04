@@ -22,7 +22,15 @@ in
 {
   services.displayManager.sddm = {
     enable = true;
+    settings = {
+      Theme = {
+        CursorTheme = "Bibata-Modern-Classic";
+        CursorSize = 24;
+      };
+      General.GreeterEnvironment ="KWIN_FORCE_SW_CURSOR=1";
+    };
     wayland.enable = true;
+    wayland.compositor = "kwin";
     theme = "Genshin";
     package = pkgs.kdePackages.sddm; # Qt6-based SDDM
 
@@ -33,10 +41,12 @@ in
       kdePackages.qtmultimedia
       kdePackages.qtwayland
       kdePackages.qtsvg
+      bibata-cursors
     ];
   };
 
   environment.systemPackages = with pkgs; [
     sddm-theme
+    bibata-cursors
   ];
 }

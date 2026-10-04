@@ -47,18 +47,11 @@
     __GL_GSYNC_ALLOWED = "1";
     __GL_SYNC_TO_VBLANK = "0";
     NVD_BACKEND = "direct";
-    WLR_NO_HARDWARE_CURSORS = "1";
   };
   environment.systemPackages = with pkgs; [
     vulkan-loader
     vulkan-tools
     mangohud
     mesa-demos
-    gst_all_1.gstreamer
-    gst_all_1.gst-plugins-base
-    gst_all_1.gst-plugins-rs
-    gst_all_1.gst-plugins-good
-    gst_all_1.gst-plugins-bad
-    gst_all_1.gst-plugins-ugly
   ];
 }
