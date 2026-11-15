@@ -15,6 +15,8 @@
     firewall = {
       enable = true;
       allowPing = false;
+      allowedUDPPorts = [ 7070 ];
+      allowedTCPPorts = [ 7070 ];
     };
   };
 
@@ -22,10 +24,12 @@
     enable = true;
     settings.Resolve = {
       DNS = [
-        "45.90.28.225#2c8c2f.dns.nextdns.io"
-        "45.90.30.225#2c8c2f.dns.nextdns.io"
-        "2a07:a8c0::2c:8c2f#2c8c2f.dns.nextdns.io"
-        "2a07:a8c1::2c:8c2f#2c8c2f.dns.nextdns.io"
+        "45.90.28.0#e2d718.dns.nextdns.io"
+        "2a07:a8c0::#e2d718.dns.nextdns.io"
+        "45.90.30.0#e2d718.dns.nextdns.io"
+        "2a07:a8c1::#e2d718.dns.nextdns.io"
+        "9.9.9.9#dns.quad9.net"
+        "2620:fe::fe#dns.quad9.net"
       ];
       Domains = [ "~." ];
       DNSSEC = true;

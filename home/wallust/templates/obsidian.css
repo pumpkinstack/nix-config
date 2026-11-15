@@ -1,0 +1,32 @@
+body.theme-dark,
+body.theme-light {
+  --background-primary: {{background}};
+  --background-primary-alt: {{background | lighten(0.03)}};
+  --background-secondary: {{background | darken(0.02)}};
+  --background-secondary-alt: {{background | lighten(0.06)}};
+  --background-modifier-border: {{background | lighten(0.12)}};
+  --background-modifier-hover: {{background | lighten(0.08)}};
+  --text-normal: {{foreground}};
+  --text-muted: {{color7}};
+  --text-faint: {{color8}};
+  --text-accent: {{color4}};
+  --text-on-accent: {{background}};
+  --text-selection: {{color4 | darken(0.25)}};
+  --interactive-accent: {{color4}};
+  --interactive-accent-hover: {{color4 | lighten(0.10)}};
+
+  /* Minimal theme */
+  --bg1: {{background}};
+  --bg2: {{background | darken(0.02)}};
+  --bg3: {{background | lighten(0.06)}};
+  --ui1: {{background | lighten(0.12)}};
+  --ui2: {{background | lighten(0.16)}};
+  --ui3: {{background | lighten(0.20)}};
+  --tx1: {{foreground}};
+  --tx2: {{color7}};
+  --tx3: {{color8}};
+  --ax1: {{color4}};
+  --ax2: {{color4 | lighten(0.10)}};
+  --ax3: {{color4 | lighten(0.10)}};
+  --hl1: {{color4 | darken(0.25)}};
+}

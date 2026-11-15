@@ -18,9 +18,9 @@
     wlogout
     hyprshot
     waypaper
+    photocraft
 
     # Multimedia & Graphics
-    vlc
     obs-studio
     upscayl
     pavucontrol
@@ -28,7 +28,6 @@
 
     # Gaming
     heroic
-    inputs.freesmlauncher.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     # File Management & Viewers
     nautilus

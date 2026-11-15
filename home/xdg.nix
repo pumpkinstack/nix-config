@@ -27,19 +27,41 @@
     mimeApps =
       let
         nautilus = [ "org.gnome.Nautilus.desktop" ];
-        vlc = [ "vlc.desktop" ];
+        mpv = [ "umpv.desktop" ];
         zathura = [ "org.pwmt.zathura.desktop" ];
         codium = [ "codium.desktop" ];
         loupe = [ "org.gnome.Loupe.desktop" ];
         gnome-editor = [ "org.gnome.TextEditor.desktop" ];
 
-        associations = {
+        videoTypes = [
+          "video/x-matroska"
+          "video/quicktime"
+          "video/mp4"
+          "video/webm"
+          "video/x-msvideo"
+          "video/mpeg"
+          "video/ogg"
+        ];
+
+        audioTypes = [
+          "audio/mpeg"
+          "audio/flac"
+          "audio/ogg"
+          "audio/x-wav"
+          "audio/mp4"
+          "audio/x-opus+ogg"
+        ];
+
+        mediaAssociations = builtins.listToAttrs (
+          map (t: {
+            name = t;
+            value = mpv;
+          }) (videoTypes ++ audioTypes)
+        );
+
+        associations = mediaAssociations // {
           "inode/directory" = nautilus;
           "application/pdf" = zathura;
-          "video/x-matroska" = vlc;
-          "video/quicktime" = vlc;
-          "video/mp4" = vlc;
-          "audio/mpeg" = vlc;
           "image/png" = loupe;
           "image/jpeg" = loupe;
           "image/webp" = loupe;
@@ -49,7 +71,7 @@
           "text/x-python" = codium;
           "text/css" = codium;
           "text/plain" = gnome-editor;
-          "text/x-csrc" =codium;
+          "text/x-csrc" = codium;
         };
       in
       {

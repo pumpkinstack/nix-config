@@ -35,8 +35,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    freesmlauncher.url = "github:FreesmTeam/FreesmLauncher";
+    aagl = {
+      url = "github:ezKEa/aagl-gtk-on-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
+
   outputs =
     { nixpkgs, ... }@inputs:
     let
@@ -65,6 +69,10 @@
           }
           inputs.hyprland.nixosModules.default
           inputs.home-manager.nixosModules.default
+          inputs.aagl.nixosModules.default
+          {
+            programs.anime-game-launcher.enable = true;
+          }
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;

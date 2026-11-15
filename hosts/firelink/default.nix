@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, ... }:
 
 {
   imports = [
@@ -29,15 +29,15 @@
       "https://cache.nixos.org"
       "https://quickshell.cachix.org"
       "https://nix-community.cachix.org"
-      "https://freesmlauncher.cachix.org"
-    ];
+    ]
+    ++ inputs.aagl.nixConfig.extra-substituters;
     trusted-public-keys = [
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       "quickshell.cachix.org-1:yFoCP7+7YDLB6YUSTjvdL5Wa0RPpzFqrklyKTmWp9Gk="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      "freesmlauncher.cachix.org-1:Jcp5Q9wiLL+EDv8Mh7c6L9xGk+lXr7/otpKxMOuBuDs="
-    ];
+    ]
+    ++ inputs.aagl.nixConfig.extra-trusted-public-keys;
   };
 
   nix.settings.accept-flake-config = false;

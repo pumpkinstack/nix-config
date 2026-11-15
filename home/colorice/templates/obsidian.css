@@ -1,0 +1,26 @@
+body {{
+  --background-primary: {background};
+  --background-primary-alt: {background.lighten_3};
+  --background-secondary: {background.darken_2};
+  --background-secondary-alt: {background.lighten_6};
+  --background-modifier-border: {background.lighten_12};
+  --background-modifier-hover: {background.lighten_8};
+
+  --text-normal: {foreground};
+  --text-muted: {color7};
+  --text-faint: {color8};
+  --text-accent: {color4};
+  --text-accent-hover: {color4.lighten_10};
+  --text-on-accent: {background};
+  --text-selection: {color4.darken_25};
+
+  --interactive-accent: {color4};
+  --interactive-accent-hover: {color4.lighten_10};
+
+  --color-red: {color1};
+  --color-green: {color2};
+  --color-yellow: {color3};
+  --color-blue: {color4};
+  --color-purple: {color5};
+  --color-cyan: {color6};
+}}

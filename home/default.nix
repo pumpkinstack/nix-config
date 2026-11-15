@@ -25,6 +25,7 @@
     ./quickshell/quickshell.nix
     ./nixcord/nixcord.nix
     ./colorice/colorice.nix
+    ./mpv/mpv.nix
   ];
 
   home.username = "ashenone";

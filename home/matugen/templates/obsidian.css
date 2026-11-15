@@ -1,0 +1,61 @@
+.theme-dark {
+  --background-primary: {{colors.surface.dark.hex}};
+  --background-primary-alt: {{colors.surface_container.dark.hex}};
+  --background-secondary: {{colors.surface_container_low.dark.hex}};
+  --background-secondary-alt: {{colors.surface_container_high.dark.hex}};
+  --background-modifier-border: {{colors.outline_variant.dark.hex}};
+  --text-normal: {{colors.on_surface.dark.hex}};
+  --text-muted: {{colors.on_surface_variant.dark.hex}};
+  --text-faint: {{colors.outline.dark.hex}};
+  --text-accent: {{colors.primary.dark.hex}};
+  --interactive-accent: {{colors.primary.dark.hex}};
+  --interactive-accent-hover: {{colors.primary_container.dark.hex}};
+  --text-on-accent: {{colors.on_primary.dark.hex}};
+  --text-selection: {{colors.secondary_container.dark.hex}};
+
+  /* Minimal theme */
+  --bg1: {{colors.surface.dark.hex}};
+  --bg2: {{colors.surface_container_low.dark.hex}};
+  --bg3: {{colors.surface_container_high.dark.hex}};
+  --ui1: {{colors.outline_variant.dark.hex}};
+  --ui2: {{colors.surface_container_highest.dark.hex}};
+  --ui3: {{colors.outline.dark.hex}};
+  --tx1: {{colors.on_surface.dark.hex}};
+  --tx2: {{colors.on_surface_variant.dark.hex}};
+  --tx3: {{colors.outline.dark.hex}};
+  --ax1: {{colors.primary.dark.hex}};
+  --ax2: {{colors.primary.dark.hex}};
+  --ax3: {{colors.primary_container.dark.hex}};
+  --hl1: {{colors.secondary_container.dark.hex}};
+}
+
+.theme-light {
+  --background-primary: {{colors.surface.light.hex}};
+  --background-primary-alt: {{colors.surface_container.light.hex}};
+  --background-secondary: {{colors.surface_container_low.light.hex}};
+  --background-secondary-alt: {{colors.surface_container_high.light.hex}};
+  --background-modifier-border: {{colors.outline_variant.light.hex}};
+  --text-normal: {{colors.on_surface.light.hex}};
+  --text-muted: {{colors.on_surface_variant.light.hex}};
+  --text-faint: {{colors.outline.light.hex}};
+  --text-accent: {{colors.primary.light.hex}};
+  --interactive-accent: {{colors.primary.light.hex}};
+  --interactive-accent-hover: {{colors.primary_container.light.hex}};
+  --text-on-accent: {{colors.on_primary.light.hex}};
+  --text-selection: {{colors.secondary_container.light.hex}};
+
+  /* Minimal theme */
+  --bg1: {{colors.surface.light.hex}};
+  --bg2: {{colors.surface_container_low.light.hex}};
+  --bg3: {{colors.surface_container_high.light.hex}};
+  --ui1: {{colors.outline_variant.light.hex}};
+  --ui2: {{colors.surface_container_highest.light.hex}};
+  --ui3: {{colors.outline.light.hex}};
+  --tx1: {{colors.on_surface.light.hex}};
+  --tx2: {{colors.on_surface_variant.light.hex}};
+  --tx3: {{colors.outline.light.hex}};
+  --ax1: {{colors.primary.light.hex}};
+  --ax2: {{colors.primary.light.hex}};
+  --ax3: {{colors.primary_container.light.hex}};
+  --hl1: {{colors.secondary_container.light.hex}};
+}

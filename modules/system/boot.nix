@@ -18,7 +18,9 @@ in
       "pcie_aspm=off"
     ];
     kernelPackages = pkgs.linuxPackages_zen;
-    blacklistedKernelModules = [ "uvcvideo" ];
+    blacklistedKernelModules = [
+      "uvcvideo"
+    ];
     loader = {
       grub = {
         enable = true;
